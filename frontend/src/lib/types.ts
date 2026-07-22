@@ -65,7 +65,7 @@ export interface ExtractedEntities {
   officerNames: string[];
 }
 
-export type VoiceVerdict = 'Likely Human Voice' | 'Suspicious Audio Patterns' | 'Likely AI-Generated Voice';
+export type VoiceVerdict = 'Likely Human Voice' | 'Suspicious Audio Patterns' | 'High Synthetic Voice Suspicion';
 
 export interface VoiceAnalysis {
   authenticityScore: number; // 0.0 (AI) to 1.0 (human)

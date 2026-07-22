@@ -56,7 +56,7 @@ class VoiceAnalyzer:
             
             authenticity_score = max(0.0, 1.0 - (suspicion * 0.33))
             
-            verdict = "Likely Human Voice" if authenticity_score >= 0.7 else "Suspicious Audio Patterns" if authenticity_score >= 0.4 else "Likely AI-Generated Voice"
+            verdict = "Likely Human Voice" if authenticity_score >= 0.7 else "Suspicious Audio Patterns" if authenticity_score >= 0.4 else "High Synthetic Voice Suspicion"
             
             features = {
                 "pitchVariance": pitch_variance,
@@ -78,7 +78,7 @@ class VoiceAnalyzer:
             return self.analyze_precomputed(0.5)
             
     def analyze_precomputed(self, score: float) -> VoiceResult:
-        verdict = "Likely Human Voice" if score >= 0.7 else "Suspicious Audio Patterns" if score >= 0.4 else "Likely AI-Generated Voice"
+        verdict = "Likely Human Voice" if score >= 0.7 else "Suspicious Audio Patterns" if score >= 0.4 else "High Synthetic Voice Suspicion"
         features = {
             "pitchVariance": 25.0 if score > 0.5 else 5.0,
             "spectralFlatness": 0.02 if score > 0.5 else 0.15,

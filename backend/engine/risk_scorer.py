@@ -76,15 +76,14 @@ class HybridRiskScorer:
                 entity_history_score = 1.0
                 break
                 
-        llm_reasoning_score = 0.5 # Placeholder
+        llm_reasoning_score = 0.0 # Not used in final deterministic score, triage only
         
         final_score_float = (
-            0.30 * phrase_result.score +
-            0.20 * coercion_result.combined_score +
+            0.35 * phrase_result.score +
+            0.25 * coercion_result.combined_score +
             0.18 * payment_result.score +
             0.12 * voice_risk +
-            0.10 * entity_history_score +
-            0.10 * llm_reasoning_score
+            0.10 * entity_history_score
         )
         
         risk_score = min(100, max(0, int(final_score_float * 100)))

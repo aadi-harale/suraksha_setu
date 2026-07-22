@@ -77,7 +77,7 @@ export default function VoiceAuthBadge({ authenticityScore, isPlaying }: { authe
         </span>
       </div>
       <p className="text-[10px] text-slate-500 mt-2 italic leading-relaxed text-center">
-        Vocal biometric verification signal only. Not standalone evidence.
+        Audio anomaly score is a supporting signal only and is not standalone proof of synthetic voice.
       </p>
     </div>
   );

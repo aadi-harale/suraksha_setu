@@ -18,7 +18,7 @@ export default function FIRPreviewModal({ isOpen, onClose, caseData }: FIRPrevie
         <div className="p-4 border-b border-slate-300 flex justify-between items-center bg-slate-300/50">
           <div className="flex items-center gap-2 text-slate-800 font-semibold">
             <Shield className="w-5 h-5 text-indigo-700" />
-            <span>Automated FIR Draft (Bharatiya Nyaya Sanhita)</span>
+            <span>Complaint/FIR Draft Assistant</span>
           </div>
           <div className="flex gap-2">
             <button className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded shadow transition-colors text-sm font-medium">
@@ -36,10 +36,15 @@ export default function FIRPreviewModal({ isOpen, onClose, caseData }: FIRPrevie
         {/* Document Body */}
         <div className="flex-1 overflow-y-auto p-8 font-serif bg-white">
           <div className="max-w-3xl mx-auto">
+            {/* Disclaimer */}
+            <div className="bg-amber-100 border-l-4 border-amber-500 text-amber-800 p-3 mb-6 text-xs font-sans">
+              <strong>Disclaimer:</strong> This is a complaint/FIR-style draft generated for hackathon demonstration. It is not an official FIR, legal order, or agency-submitted document. Legal sections and suggested actions require review by authorized personnel.
+            </div>
+
             {/* National Emblem Placeholder */}
             <div className="text-center mb-6 border-b-2 border-slate-900 pb-6">
-              <h1 className="text-2xl font-bold uppercase tracking-widest mb-1">First Information Report</h1>
-              <h2 className="text-lg uppercase mb-2">(Under Section 173 BNSS)</h2>
+              <h1 className="text-2xl font-bold uppercase tracking-widest mb-1">FIR-Style Complaint Draft</h1>
+              <h2 className="text-lg uppercase mb-2">(Suggested Legal Structure)</h2>
               <p className="text-sm">Cyber Crime Police Station, EOW</p>
               <p className="text-sm font-semibold mt-2">State of Maharashtra</p>
             </div>
@@ -58,7 +63,7 @@ export default function FIRPreviewModal({ isOpen, onClose, caseData }: FIRPrevie
                 <span className="font-bold">Date:</span> {new Date().toLocaleDateString()}
               </div>
               <div className="col-span-2">
-                <span className="font-bold">3. Acts & Sections:</span> 
+                <span className="font-bold">3. Suggested Legal References:</span> 
                 <p className="pl-4 mt-1">i. Bharatiya Nyaya Sanhita (BNS), 2023 - Sections 318(4) [Cheating], 319 [Cheating by Personation], 308(2) [Extortion]</p>
                 <p className="pl-4">ii. Information Technology Act, 2000 - Section 66D</p>
               </div>
@@ -76,7 +81,7 @@ export default function FIRPreviewModal({ isOpen, onClose, caseData }: FIRPrevie
             <div className="mb-6">
               <h3 className="font-bold underline mb-2">5. Brief facts of the case</h3>
               <p className="text-sm text-justify leading-relaxed">
-                On the basis of AI-driven proactive threat detection (SurakshaNet AI Platform), this FIR is registered. The accused impersonated officers of the <span className="font-semibold">{caseData.entities.agencies.join(', ') || 'CBI/Customs'}</span>, falsely claiming that a parcel containing illegal items was intercepted in the victim's name or that an arrest warrant had been issued. 
+                On the basis of AI-driven proactive threat detection (SurakshaNet AI Platform), this draft summarizes the incident for authorized officer review. The accused impersonated officers of the <span className="font-semibold">{caseData.entities.agencies.join(', ') || 'CBI/Customs'}</span>, falsely claiming that a parcel containing illegal items was intercepted in the victim's name or that an arrest warrant had been issued. 
               </p>
               <p className="text-sm text-justify leading-relaxed mt-2">
                 The accused utilized coercive tactics (Digital Arrest) and instructed the victim to remain on a continuous video call, demanding a security deposit. Extracted communication logs indicate the presence of phrases such as <em>"{caseData.highlightedPhrases[0]?.phrase}"</em> and <em>"{caseData.highlightedPhrases[1]?.phrase}"</em>. Total financial demand detected: <span className="font-semibold">{caseData.entities.amounts.join(', ') || 'Unknown'}</span>.
@@ -84,15 +89,15 @@ export default function FIRPreviewModal({ isOpen, onClose, caseData }: FIRPrevie
             </div>
 
             <div className="mb-8">
-              <h3 className="font-bold underline mb-2">6. Action Taken</h3>
+              <h3 className="font-bold underline mb-2">6. Action Taken / Suggested Actions</h3>
               <div className="text-sm space-y-2">
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                  <span>Direction issued to nodal officer (RBI/NPCI) to freeze identified UPI VPA under Sec 106 BNSS.</span>
+                  <span>Suggested action: bank/NPCI review of suspect payment handle under Sec 106 BNSS.</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                  <span>Direction issued to Telecom Service Provider to suspend identified MSISDN.</span>
+                  <span>Suggested action: telecom review of suspect caller ID.</span>
                 </div>
               </div>
             </div>
@@ -105,11 +110,11 @@ export default function FIRPreviewModal({ isOpen, onClose, caseData }: FIRPrevie
               <div className="text-center">
                 <div className="text-indigo-800 font-bold italic text-xl mb-1 flex items-center justify-center gap-1">
                   <FileSignature className="w-5 h-5" />
-                  Auto-Signed (AI Nodal)
+                  System Generated
                 </div>
                 <div className="w-48 border-b border-slate-400 mb-2"></div>
-                <p className="text-sm font-semibold">Duty Officer</p>
-                <p className="text-xs">Cyber Police Station</p>
+                <p className="text-sm font-semibold">Prepared by SurakshaNet AI</p>
+                <p className="text-xs">Demo Draft</p>
               </div>
             </div>
           </div>
