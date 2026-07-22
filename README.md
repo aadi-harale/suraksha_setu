@@ -11,10 +11,9 @@
 
 - **Live Demo:** [https://suraksha-setu-indol.vercel.app/](https://suraksha-setu-indol.vercel.app/)
 - **GitHub Repository:** [https://github.com/aadi-harale/suraksha_setu](https://github.com/aadi-harale/suraksha_setu)
-- **Demo Video:** [Add demo video link here]
-- **Pitch Deck:** [Add pitch deck link here]
+- **Demo Video:** [https://drive.google.com/file/d/1_T2kYNGLl739bIoA0bKhXFWXWVkulMsD/view?usp=drive_link](https://drive.google.com/file/d/1_T2kYNGLl739bIoA0bKhXFWXWVkulMsD/view?usp=drive_link)
 
-**One-line pitch:**
+
 SurakshaNet AI is a real-time digital arrest scam intervention and fraud intelligence platform that detects coercive scam patterns during calls, warns victims before payment, links suspicious entities through fraud graph intelligence, and generates complaint-ready, tamper-evident case packets for cybercrime triage.
 
 ---
