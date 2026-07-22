@@ -1,0 +1,71 @@
+{
+  "authority_impersonation": [
+    {"text": "This is CBI", "weight": 0.9, "hinglish": false},
+    {"text": "Aapke khilaf warrant nikla hai", "weight": 0.85, "hinglish": true},
+    {"text": "Central Bureau of Investigation", "weight": 0.9, "hinglish": false},
+    {"text": "This is from Enforcement Directorate", "weight": 0.9, "hinglish": false},
+    {"text": "Customs department", "weight": 0.8, "hinglish": false},
+    {"text": "Telecom Regulatory Authority", "weight": 0.8, "hinglish": false},
+    {"text": "Mumbai Police Cyber Cell", "weight": 0.85, "hinglish": false},
+    {"text": "Supreme Court order", "weight": 0.9, "hinglish": false},
+    {"text": "Aadhaar is linked to money laundering", "weight": 0.9, "hinglish": false},
+    {"text": "FIR has been registered", "weight": 0.85, "hinglish": false}
+  ],
+  "legal_threat": [
+    {"text": "arrest warrant", "weight": 0.85, "hinglish": false},
+    {"text": "case registered", "weight": 0.8, "hinglish": false},
+    {"text": "money laundering", "weight": 0.85, "hinglish": false},
+    {"text": "jail", "weight": 0.8, "hinglish": false},
+    {"text": "non-bailable", "weight": 0.9, "hinglish": false},
+    {"text": "court order", "weight": 0.8, "hinglish": false},
+    {"text": "freeze your account", "weight": 0.85, "hinglish": false},
+    {"text": "seize your property", "weight": 0.85, "hinglish": false},
+    {"text": "criminal charges", "weight": 0.8, "hinglish": false},
+    {"text": "hawala", "weight": 0.85, "hinglish": false}
+  ],
+  "isolation": [
+    {"text": "do not tell anyone", "weight": 0.9, "hinglish": false},
+    {"text": "don't tell family", "weight": 0.9, "hinglish": false},
+    {"text": "confidential investigation", "weight": 0.8, "hinglish": false},
+    {"text": "stay on video call", "weight": 0.85, "hinglish": false},
+    {"text": "keep camera on", "weight": 0.85, "hinglish": false},
+    {"text": "don't disconnect", "weight": 0.85, "hinglish": false},
+    {"text": "go to a separate room", "weight": 0.9, "hinglish": false},
+    {"text": "don't use other devices", "weight": 0.9, "hinglish": false},
+    {"text": "evidence tampering", "weight": 0.8, "hinglish": false},
+    {"text": "digital arrest", "weight": 0.95, "hinglish": false},
+    {"text": "under digital arrest", "weight": 0.95, "hinglish": false}
+  ],
+  "payment": [
+    {"text": "transfer money", "weight": 0.9, "hinglish": false},
+    {"text": "UPI", "weight": 0.8, "hinglish": false},
+    {"text": "bank transfer", "weight": 0.8, "hinglish": false},
+    {"text": "verification deposit", "weight": 0.9, "hinglish": false},
+    {"text": "security deposit", "weight": 0.9, "hinglish": false},
+    {"text": "court fees", "weight": 0.8, "hinglish": false},
+    {"text": "send to safe account", "weight": 0.9, "hinglish": false},
+    {"text": "pay immediately", "weight": 0.85, "hinglish": false},
+    {"text": "refundable amount", "weight": 0.85, "hinglish": false},
+    {"text": "bail amount", "weight": 0.9, "hinglish": false}
+  ],
+  "remote_access": [
+    {"text": "install AnyDesk", "weight": 0.9, "hinglish": false},
+    {"text": "TeamViewer", "weight": 0.85, "hinglish": false},
+    {"text": "screen share", "weight": 0.8, "hinglish": false},
+    {"text": "share your screen", "weight": 0.85, "hinglish": false},
+    {"text": "QuickSupport", "weight": 0.85, "hinglish": false},
+    {"text": "remote access", "weight": 0.8, "hinglish": false},
+    {"text": "share OTP", "weight": 0.9, "hinglish": false},
+    {"text": "download this app", "weight": 0.75, "hinglish": false}
+  ],
+  "urgency": [
+    {"text": "immediately", "weight": 0.7, "hinglish": false},
+    {"text": "right now", "weight": 0.75, "hinglish": false},
+    {"text": "within 2 hours", "weight": 0.8, "hinglish": false},
+    {"text": "urgent", "weight": 0.7, "hinglish": false},
+    {"text": "time is running out", "weight": 0.8, "hinglish": false},
+    {"text": "cooperate now", "weight": 0.75, "hinglish": false},
+    {"text": "don't waste time", "weight": 0.75, "hinglish": false},
+    {"text": "last chance", "weight": 0.8, "hinglish": false}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "nodes": [
+    { "id": "phone_1", "type": "phone", "value": "+91-9876543210", "riskLevel": "high", "cluster": 1, "city": "Mumbai" },
+    { "id": "upi_1", "type": "upi", "value": "rbi.verify@okaxis", "riskLevel": "critical", "cluster": 1 },
+    { "id": "victim_1", "type": "victim", "value": "Victim A", "riskLevel": "low", "cluster": 1, "city": "Mumbai" },
+    { "id": "account_1", "type": "bank_account", "value": "SBI-9876", "riskLevel": "high", "cluster": 1, "bank": "SBI" },
+    { "id": "officer_1", "type": "officer_name", "value": "DCP Sharma", "riskLevel": "medium", "cluster": 1 },
+    { "id": "account_3", "type": "bank_account", "value": "HDFC-1122", "riskLevel": "critical", "cluster": 3, "bank": "HDFC" }
+  ],
+  "edges": [
+    { "id": "e1", "source": "phone_1", "target": "victim_1", "relationship": "called_victim" },
+    { "id": "e2", "source": "phone_1", "target": "upi_1", "relationship": "asked_payment_to" },
+    { "id": "e3", "source": "upi_1", "target": "account_1", "relationship": "linked_to_account" },
+    { "id": "e4", "source": "account_1", "target": "account_3", "relationship": "same_mule_account" }
+  ]
+}

@@ -1,0 +1,9 @@
+fastapi[standard]
+uvicorn[standard]
+sqlmodel
+aiosqlite
+networkx[default]
+python-louvain
+regex
+pydantic
+python-multipart

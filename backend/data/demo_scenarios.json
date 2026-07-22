@@ -1,0 +1,402 @@
+[
+  {
+    "id": "scenario_01",
+    "title": "CBI Digital Arrest — Money Laundering",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Hello, am I speaking with Mr. Rajesh Kumar?\nVictim: Yes, speaking. Who is this?\nCaller: Mr. Kumar, my name is Deputy Commissioner Vikram Sharma, calling from the Central Bureau of Investigation, New Delhi headquarters. This is an official call being recorded under Section 65B of the Indian Evidence Act. Please do not disconnect.\nVictim: CBI? What is this about?\nCaller: Sir, your Aadhaar number ending in 4782 has been linked to a money laundering case — FIR number CBI/ML/2026/3847. A bank account opened in your name at Punjab National Bank, Connaught Place branch, has been used to launder approximately ₹2.3 crore in suspicious funds. This amount was routed through hawala channels connected to a terror financing network.\nVictim: What? This is impossible! I don't even have an account at PNB!\nCaller: Sir, that is exactly the problem. Someone has used your identity documents to open these accounts. We have already arrested three people in connection with this case. Your name has appeared 14 times in the transaction records. The Enforcement Directorate is also involved. I am trying to help you before they issue a non-bailable warrant.\nVictim: Oh my God... what should I do?\nCaller: Sir, please remain calm. Under Section 13 of the Prevention of Money Laundering Act, we need to verify your accounts to clear your name. You will need to undergo a digital verification process. First, I need you to download the AnyDesk application on your phone so our technical team can verify your banking apps remotely. This is standard protocol.\nVictim: Download an app? I don't know...\nCaller: Mr. Kumar, let me be very clear. If you do not cooperate, I will be forced to issue a digital arrest warrant under CrPC Section 41A. You will not be able to leave your house, and local police will be sent to your residence within 2 hours. Your passport will also be flagged. Now, I have your current address as Sector 22, Dwarka. Is that correct?\nVictim: Yes... that's correct. Please, I'll cooperate.\nCaller: Good. Now transfer ₹48,000 to the RBI verification account for the compliance bond. Once our forensic team clears your accounts, this amount will be fully refunded within 24 hours. The UPI ID is rbi.verify@okaxis. Do it now while I am on the line — this call is being monitored by my senior officer.\nVictim: ₹48,000? That's a lot of money...\nCaller: Sir, ₹48,000 is nothing compared to the ₹2.3 crore case against you. If you delay, the amount of the compliance bond will increase to ₹1.5 lakh. I am doing you a favor by keeping it at the minimum. Please proceed immediately.",
+    "risk_progression": [10, 22, 38, 48, 62, 74, 86, 92],
+    "kill_chain_stages_at": {"1": 0.08, "2": 0.22, "3": 0.38, "4": 0.55, "5": 0.72},
+    "expected_risk_score": 92,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.28,
+    "entities": {
+      "phones": ["+91-9876543210"],
+      "upis": ["rbi.verify@okaxis"],
+      "agencies": ["CBI", "ED"],
+      "officer_names": ["DCP Vikram Sharma"],
+      "amounts": ["₹48,000", "₹2.3 crore", "₹1.5 lakh"]
+    },
+    "city": "New Delhi"
+  },
+  {
+    "id": "scenario_02",
+    "title": "ED Hawala Investigation — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Is this Mrs. Priya Nair?\nVictim: Yes, who is calling?\nCaller: Ma'am, this is Assistant Director Suresh Menon from the Enforcement Directorate, Mumbai Zonal Office. I am calling regarding case number ED/PMLA/2026/0892. Please listen carefully — this call is classified and you are not to share this information with anyone, including family members. Doing so will be considered obstruction of justice under Section 186 IPC.\nVictim: Enforcement Directorate? I haven't done anything wrong!\nCaller: Ma'am, we are aware that you may be an innocent party. However, your PAN card — ending in 7293K — has been flagged in connection with a ₹47 crore hawala racket operated by a gang based in Sharjah and Dubai. Your PAN was used to create three shell companies: Nexus Trading Pvt Ltd, Paramount Exports, and GlobalLink Services.\nVictim: I've never heard of these companies! This must be identity theft!\nCaller: That is precisely what we are investigating. However, until the investigation is complete, your bank accounts may be frozen by the Financial Intelligence Unit. To prevent this, we need to conduct an immediate digital verification of your financial holdings. Ma'am, do you have net banking access on your phone?\nVictim: Yes, I do... but why do you need that?\nCaller: We need to run a real-time audit of your transaction patterns. Our AI-based forensic system will compare your spending patterns with the hawala transactions. This is a 15-minute process. I will now connect you with our senior technical officer who will guide you through the verification. Please do not disconnect the call or leave your room until the process is complete — you are now under digital surveillance as per PMLA Section 17.\nVictim: Digital surveillance? Am I under arrest?\nCaller: Ma'am, you are under a precautionary digital arrest. Your movements are being tracked via your phone's GPS. Any attempt to contact anyone or leave your residence will result in immediate physical arrest. Now, please open your bank app and share your screen through the link I am sending you via SMS.\nVictim: This is very frightening...\nCaller: I understand, ma'am. Cooperate and this will be resolved quickly. We also need you to transfer a refundable security deposit of ₹65,000 to our escrow account — UPI ID enforcement.verify@ybl. This protects your assets during the audit. You will receive an official receipt from the ED within 48 hours.\nVictim: ₹65,000... I need to think about this.\nCaller: Ma'am, every minute you delay, the FIU is one step closer to freezing all your accounts. Your fixed deposits, your mutual funds — everything. Act now.",
+    "risk_progression": [8, 18, 32, 50, 65, 78, 88, 94],
+    "kill_chain_stages_at": {"1": 0.06, "2": 0.2, "3": 0.35, "4": 0.52, "5": 0.7},
+    "expected_risk_score": 94,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.25,
+    "entities": {
+      "phones": ["+91-8899001122"],
+      "upis": ["enforcement.verify@ybl"],
+      "agencies": ["ED", "FIU"],
+      "officer_names": ["AD Suresh Menon"],
+      "amounts": ["₹65,000", "₹47 crore"]
+    },
+    "city": "Mumbai"
+  },
+  {
+    "id": "scenario_03",
+    "title": "NCB Drugs in Parcel — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Hello, is this Mr. Arjun Reddy? Date of birth 15th March 1988?\nVictim: Yes, that's me. Who is this?\nCaller: Mr. Reddy, I am Senior Inspector Kavita Deshmukh from the Narcotics Control Bureau, Hyderabad Division. We have intercepted a parcel at the Rajiv Gandhi International Airport courier hub. The parcel — tracking number NCB/INT/HYD/5521 — is registered in your name with your Aadhaar and current address at Madhapur, Hitech City.\nVictim: A parcel? I haven't sent any parcel!\nCaller: The parcel was shipped to Bangkok, Thailand and contains 350 grams of MDMA, five forged Indian passports, and three cloned credit cards. Under Section 22 of the NDPS Act, this carries a minimum sentence of 10 years rigorous imprisonment and a fine of ₹1 lakh. Our team has already filed an FIR — number NCB/HYD/2026/1187.\nVictim: Drugs?! This is insane! Someone must have used my details!\nCaller: Mr. Reddy, we have seen such cases before. However, the legal process requires us to conduct a full digital investigation before we can clear your name. I am going to connect you to our investigation room via video call. You must remain on camera at all times — this is your digital court hearing. Any movement away from the camera will be treated as an attempt to flee, and armed officers will be dispatched to your location.\nVictim: Video call? Court hearing on a phone call?\nCaller: Yes sir, this is done under the new Digital India judicial framework. The Supreme Court approved digital hearings for narcotics cases in 2025. Now, sir, during the hearing, you will need to demonstrate that your bank accounts were not used to fund drug trafficking. For this, you must provide us access to your banking credentials. Additionally, a compliance deposit of ₹35,000 is required to initiate the clearance certificate process. Transfer it to ncb.clearance@paytm.\nVictim: I'm confused... this doesn't sound right.\nCaller: Mr. Reddy, I have seen people ignore NCB calls before. They ended up in Chanchalguda Jail within 72 hours. Your wife and children will also be called for questioning. If you are truly innocent, you have nothing to worry about. Cooperate now and this will be over in 30 minutes. I am your only ally in this situation — my seniors want to proceed directly with arrest.\nVictim: Okay... okay, I'll do what you say.\nCaller: Good. Open Google Pay and transfer ₹35,000 to ncb.clearance@paytm immediately. Keep this call connected.",
+    "risk_progression": [12, 25, 40, 55, 68, 80, 90, 95],
+    "kill_chain_stages_at": {"1": 0.07, "2": 0.18, "3": 0.35, "4": 0.5, "5": 0.68},
+    "expected_risk_score": 95,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.32,
+    "entities": {
+      "phones": ["+91-7744889922"],
+      "upis": ["ncb.clearance@paytm"],
+      "agencies": ["NCB"],
+      "officer_names": ["SI Kavita Deshmukh"],
+      "amounts": ["₹35,000", "₹1 lakh"]
+    },
+    "city": "Hyderabad"
+  },
+  {
+    "id": "scenario_04",
+    "title": "Customs Parcel Interception — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Good afternoon. Am I speaking with Mr. Anil Gupta, Aadhaar ending 5561?\nVictim: Yes, this is Anil Gupta.\nCaller: Sir, this is Inspector Rajat Kapoor from the Indian Customs Department, IGI Airport, New Delhi. A parcel addressed to you from Shanghai, China has been intercepted at the customs screening facility. Parcel reference: ICD/DEL/2026/7734. Upon X-ray inspection, we found five undeclared Rolex watches, eight iPhones, and counterfeit currency notes worth ₹12 lakh. This is a violation of the Customs Act Section 112, the Foreign Exchange Management Act, and the Indian Penal Code Section 420.\nVictim: Sir, I haven't ordered anything from China!\nCaller: Mr. Gupta, the shipping documents carry your name, Aadhaar, and your address at Model Town, Delhi. Whether you ordered it or not, you are legally the consignee. We have already initiated proceedings. Your passport has been put on a Look Out Circular. You cannot leave the country.\nVictim: This is shocking. What happens now?\nCaller: Right now, I am going to initiate a digital arrest under the new e-Customs protocol. You must stay at your current location and keep this call active. Any deviation will trigger an automatic alert to Delhi Police. Our senior customs officer will join this call shortly to conduct a preliminary hearing.\nVictim: But sir, can't I come to the airport to sort this out in person?\nCaller: Absolutely not. The parcel area is a restricted zone. Physical presence would complicate matters and could result in immediate detention. The digital process is faster and in your interest. Now, Mr. Gupta, to release the parcel for forensic examination and to initiate your clearance, a customs bond of ₹42,000 must be deposited. This is a government-mandated refundable fee. Transfer it to customs.bond@icici — this is the official account managed by the Customs Revenue Department.\nVictim: ₹42,000 as bond?\nCaller: Sir, the alternative is seizure of your personal assets, freezing of all bank accounts, and criminal prosecution. The bond is refundable within 7 working days once clearance is granted. I have handled 200+ cases like this. People who cooperate are cleared within 48 hours. Those who don't — well, let me just say their cases drag on for years in the courts. Please proceed with the transfer now. Time is critical.\nVictim: Alright, let me check my account balance...\nCaller: Very good. Stay on the line. And Mr. Gupta — do not tell anyone about this call. It is classified under the Official Secrets Act.",
+    "risk_progression": [8, 20, 35, 48, 60, 72, 84, 91],
+    "kill_chain_stages_at": {"1": 0.07, "2": 0.2, "3": 0.38, "4": 0.54, "5": 0.72},
+    "expected_risk_score": 91,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.3,
+    "entities": {
+      "phones": ["+91-9988776655"],
+      "upis": ["customs.bond@icici"],
+      "agencies": ["Indian Customs", "Delhi Police"],
+      "officer_names": ["Inspector Rajat Kapoor"],
+      "amounts": ["₹42,000", "₹12 lakh"]
+    },
+    "city": "New Delhi"
+  },
+  {
+    "id": "scenario_05",
+    "title": "TRAI SIM Block Threat — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: [Automated voice] This is an urgent message from the Telecom Regulatory Authority of India. Your mobile number will be disconnected within 2 hours due to involvement in illegal activities. Press 1 to speak with a TRAI officer.\n[Victim presses 1]\nCaller: Hello, this is Officer Deepak Verma from TRAI Complaint Cell, Bangalore. Your mobile number +91-9341287654 has been flagged. We have received 22 complaints of harassment, financial fraud, and impersonation using your number. Under TRAI regulation 19/2026, your number will be permanently blocked and a criminal complaint will be filed.\nVictim: What complaints? I haven't done anything like that!\nCaller: Ma'am, let me pull up the case file. Your number was used to send 4,800 bulk SMS messages promoting a fraudulent investment scheme. Additionally, three women have filed harassment complaints tracing back to this number. The case has been escalated to the Cyber Crime Cell.\nVictim: But I'm a teacher! I only use this number for personal calls!\nCaller: Ma'am, I believe you. This is likely a case of SIM cloning. However, until the investigation is complete, TRAI protocol requires us to block the number. The only way to prevent this is an immediate digital verification. I will transfer you to our senior cyber crime officer who will conduct the verification.\n[Transfer sound]\nCaller 2: Hello, this is ACP Mohan Krishnamurthy, Cyber Crime Cell. Ma'am, your Aadhaar-linked bank accounts are at risk because the criminals who cloned your SIM also have access to your OTPs. We need to secure your accounts immediately. Please install TeamViewer on your phone so our technical team can secure your banking applications.\nVictim: Install an app? Are you sure?\nCaller 2: Ma'am, this is a standard security procedure approved by the Ministry of Home Affairs. If we don't act now, the criminals will drain your bank accounts tonight. You must also move your funds to a secure government account temporarily. Transfer your savings — whatever amount you have — to the RBI safe vault account: rbi.safevault@upi. Once the investigation is closed in 72 hours, every rupee will be returned.\nVictim: Transfer all my savings?\nCaller 2: Yes ma'am. Your current bank account is compromised. The money is not safe there. We are trying to protect you. Last week, a similar victim lost ₹18 lakh because she delayed. Don't make the same mistake. How much do you have in your account right now?",
+    "risk_progression": [15, 28, 42, 55, 68, 78, 88, 93],
+    "kill_chain_stages_at": {"1": 0.05, "2": 0.18, "3": 0.32, "4": 0.5, "5": 0.68},
+    "expected_risk_score": 93,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.22,
+    "entities": {
+      "phones": ["+91-9341287654", "+91-8045123456"],
+      "upis": ["rbi.safevault@upi"],
+      "agencies": ["TRAI", "Cyber Crime Cell"],
+      "officer_names": ["Officer Deepak Verma", "ACP Mohan Krishnamurthy"],
+      "amounts": ["₹18 lakh"]
+    },
+    "city": "Bangalore"
+  },
+  {
+    "id": "scenario_06",
+    "title": "Police Cybercrime Complaint — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Hello, is this Mr. Sanjay Patil?\nVictim: Haan ji, bol raha hoon. Kaun?\nCaller: Mr. Patil, main Sub-Inspector Rohit Jadhav bol raha hoon, Pune Cyber Crime Branch se. Aapke Aadhaar number 8734-XXXX-5521 ke khilaf ek cyber crime complaint file hui hai — complaint number CYB/PUN/2026/4412. Yeh bahut serious matter hai.\nVictim: Cyber crime? Mere khilaf? Kya hua hai?\nCaller: Sir, aapke naam par ek fake social media account banaya gaya hai jisse ek minor girl ko sexually explicit messages bheje gaye hain. Uski family ne FIR file ki hai under POCSO Act and IT Act Section 67B. Yeh non-bailable offence hai, sir. Minimum 5 saal ki jail.\nVictim: Yeh toh galat hai! Maine aisa kuch nahi kiya! Mera koi fake account nahi hai!\nCaller: Sir, main samajhta hoon. Lekin digital evidence aapke phone number aur IP address se link hota hai. Aapka phone number is fake account ke recovery email se connected hai. Hum abhi ek emergency digital hearing conduct karenge. Aapko apne phone ka camera on rakhna hoga — yeh digital arrest protocol hai. Agar aapne camera band kiya ya call disconnect ki, toh local police station se team aapke ghar 30 minute mein aa jayegi.\nVictim: Sir, please... main innocent hoon!\nCaller: Isliye toh main aapki help kar raha hoon. Normally yeh case directly court mein jaata hai. Lekin main aapko ek chance de raha hoon digital verification ke through. Aapko ₹28,000 ka legal compliance fee deposit karna hoga — yeh cyber crime tribunal ka mandatory charge hai. UPI ID hai: cybercrime.pune@axl. Transfer karo, aur 24 ghante mein aapko clearance certificate mil jayega.\nVictim: ₹28,000? Mere paas itne paise nahi hain abhi...\nCaller: Sir, aapke accounts mein paise hain — humne check kiya hai. Aapki SBI account mein ₹1,24,000 hai. ₹28,000 toh bahut kam hai innocence prove karne ke liye. Warna kal subah tak aapki photo media mein aa jayegi — 'POCSO accused arrested' — socho aapki family ka kya hoga. Aapke bacche school mein kya face karenge.\nVictim: Please sir... theek hai, main transfer karta hoon.\nCaller: Jaldi karo. Aur yaad rakhna — yeh call recording ho rahi hai. Kisi ko bhi mat batana — wife ko bhi nahi. Yeh confidential investigation hai.",
+    "risk_progression": [10, 25, 40, 52, 65, 76, 87, 93],
+    "kill_chain_stages_at": {"1": 0.06, "2": 0.2, "3": 0.36, "4": 0.52, "5": 0.7},
+    "expected_risk_score": 93,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.35,
+    "entities": {
+      "phones": ["+91-9823456789"],
+      "upis": ["cybercrime.pune@axl"],
+      "agencies": ["Pune Cyber Crime Branch"],
+      "officer_names": ["SI Rohit Jadhav"],
+      "amounts": ["₹28,000", "₹1,24,000"]
+    },
+    "city": "Pune"
+  },
+  {
+    "id": "scenario_07",
+    "title": "RBI Account Freeze — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Good morning. Is this Mr. Venkatesh Iyer, account holder at HDFC Bank, Koramangala branch?\nVictim: Yes, this is Venkatesh speaking.\nCaller: Mr. Iyer, I am Deputy Governor's office representative, Meera Saxena, calling from the Reserve Bank of India, Central Office, Mumbai. This is an encrypted government call. Your HDFC savings account number ending 7832 has been flagged by our Anti-Money Laundering Division under RBI Master Circular DBOD.AML.BC.18/14.01.001/2026.\nVictim: RBI is calling me directly? What is the issue?\nCaller: Sir, your account has received 47 high-value transactions totaling ₹3.8 crore from accounts linked to a shell company network. These shell companies are under investigation for routing black money through cryptocurrency exchanges. The Financial Intelligence Unit has recommended immediate freezing of all your accounts — savings, current, FD, and demat.\nVictim: ₹3.8 crore?! I'm a salaried employee! My salary is ₹1.2 lakh per month!\nCaller: We understand, sir. This is precisely why we are calling before the freeze order is executed. If the freeze goes through, your salary credits will also bounce, your EMIs will default, and your CIBIL score will be severely impacted. We want to help you avoid this, but you must cooperate within the next 45 minutes — that is when the freeze order is scheduled to execute.\nVictim: 45 minutes? What do I need to do?\nCaller: Sir, RBI has a Rapid Account Verification Protocol — RAVP. Under this, you transfer your account balance to an RBI escrow holding account. Our forensic AI system then analyzes every transaction in your account. Clean transactions are returned within 48 hours, and suspicious ones are flagged separately. This way, your clean money is protected even if the freeze order executes.\nVictim: Transfer my entire balance? How much are we talking about?\nCaller: Sir, transfer whatever is in your savings and current accounts. The escrow account details: UPI ID rbi.escrow.verify@sbi. This is an RBI-managed State Bank of India account. You will receive an SMS confirmation from SBI once the transfer is complete. Sir, 42 minutes remaining now.\nVictim: This feels very unusual. RBI doesn't call people like this...\nCaller: Sir, I appreciate your caution. But let me ask you — did you know about these 47 transactions? No. That means someone has already compromised your account. Every minute you delay is a minute the criminals have to drain more funds. I am sending you my official RBI employee ID via WhatsApp right now. Verify it and proceed. Time is running out, Mr. Iyer.\nVictim: Let me at least call my bank manager first.\nCaller: Sir, your bank manager cannot override an RBI freeze order. And if you call them, it will alert the internal suspect — yes, we believe an HDFC Bank insider may be involved in this network. Calling the bank will compromise the investigation. Please trust the process.",
+    "risk_progression": [8, 18, 30, 45, 58, 72, 85, 90],
+    "kill_chain_stages_at": {"1": 0.08, "2": 0.22, "3": 0.4, "4": 0.56, "5": 0.74},
+    "expected_risk_score": 90,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.27,
+    "entities": {
+      "phones": ["+91-22-26001000"],
+      "upis": ["rbi.escrow.verify@sbi"],
+      "agencies": ["RBI", "FIU", "HDFC Bank"],
+      "officer_names": ["Meera Saxena"],
+      "amounts": ["₹3.8 crore", "₹1.2 lakh"]
+    },
+    "city": "Bangalore"
+  },
+  {
+    "id": "scenario_08",
+    "title": "NIA Terror Financing — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Mr. Farhan Sheikh?\nVictim: Yes, speaking.\nCaller: Mr. Sheikh, this is Joint Director Arun Bhardwaj from the National Investigation Agency, Counter-Terrorism Division. What I am about to tell you is classified under the National Security Act. If you share this information with anyone, you will be prosecuted under Section 3 of the Official Secrets Act, 1923.\nVictim: NIA? What is going on?\nCaller: Sir, a terror financing investigation codenamed Operation Shadow Net has uncovered a network of bank accounts used to fund terrorist activities in Jammu & Kashmir. Your ICICI Bank account ending 3349 received a wire transfer of ₹8,50,000 from a Dubai-based account linked to a designated terrorist organization. This constitutes a violation of the Unlawful Activities Prevention Act, Section 17 — punishment is life imprisonment.\nVictim: ₹8.5 lakh?! I never received any such amount! Check my statements!\nCaller: Sir, the transfer was made and immediately withdrawn via ATM and UPI — the account was accessed remotely. Your net banking credentials were compromised. But legally, you are the account holder, and the onus is on you to prove your innocence. This is how UAPA works — the burden of proof is on the accused.\nVictim: This is terrifying. I'm just a software engineer!\nCaller: Sir, I am calling because my team believes you are likely innocent. But I need evidence to present to the NIA Special Court. For that, you must undergo an immediate digital forensic audit. You will need to be on a video call for the next 2 hours — this constitutes your digital arrest. Do not move from your current location. Do not contact anyone.\nVictim: Two hours? I'm at work!\nCaller: Sir, tell your office you have a personal emergency. This is a matter of national security. Now, for the forensic audit to proceed, a national security compliance deposit of ₹75,000 is required. This is held in escrow by the NIA Financial Crimes Unit and is fully refundable once you are cleared. Transfer to: nia.escrow@ybl.\nVictim: ₹75,000 is a huge amount for me.\nCaller: Sir, with all due respect, we are talking about a terror financing charge. If this goes to court without clearance, your career, your reputation, your family — everything is finished. Media will pick this up. Your name will be on the NIA website's wanted list. ₹75,000 is a small price for your freedom. I have seen people lose crores fighting these cases in court for 10-15 years.\nVictim: Can I at least talk to a lawyer?\nCaller: Sir, this is a classified NIA investigation. Involving a lawyer at this stage will be treated as evidence tampering. You can engage a lawyer after the preliminary audit is completed. Right now, the clock is ticking. Transfer the amount and let us begin the clearance process. I am trying to protect you, Mr. Sheikh.",
+    "risk_progression": [12, 28, 42, 55, 70, 82, 90, 95],
+    "kill_chain_stages_at": {"1": 0.06, "2": 0.18, "3": 0.34, "4": 0.5, "5": 0.68},
+    "expected_risk_score": 95,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.24,
+    "entities": {
+      "phones": ["+91-11-24368700"],
+      "upis": ["nia.escrow@ybl"],
+      "agencies": ["NIA", "ICICI Bank"],
+      "officer_names": ["JD Arun Bhardwaj"],
+      "amounts": ["₹75,000", "₹8,50,000"]
+    },
+    "city": "Chennai"
+  },
+  {
+    "id": "scenario_09",
+    "title": "Bank KYC Update Fraud",
+    "type": "kyc_fraud",
+    "is_scam": true,
+    "transcript": "Caller: Hello sir, good afternoon! I am calling from SBI Customer Care, my name is Rahul from the KYC Updation Department. Your SBI account ending 4455 requires immediate KYC update as per RBI guidelines. If not completed within 24 hours, your account will be temporarily suspended.\nVictim: KYC update? I thought I did it last year.\nCaller: Sir, RBI has issued new e-KYC guidelines effective April 2026. All accounts must undergo re-verification using the Video KYC process. Your account is in the pending list — I can see 3 failed attempts already. If we don't complete it today, the system will auto-suspend your account tomorrow morning at 10 AM.\nVictim: Oh, that would be a problem. My salary gets credited day after tomorrow.\nCaller: Exactly sir, that's why I am calling you personally to help. The process is very simple. I will send you an OTP on your registered mobile number. You just need to read it to me for verification. Also, I'll send a link for the Video KYC — you just need to upload your Aadhaar front and back, PAN card photo, and a live selfie.\nVictim: You need my OTP? The bank always says never share OTP with anyone.\nCaller: Sir, I understand your concern. But this is the bank calling you — I already have your account details. The OTP is for identity verification only, not for any transaction. See, I can tell you — your account balance is approximately ₹2,34,000, your last transaction was on 5th July at Big Bazaar for ₹3,200. Only a genuine bank representative would know this, right?\nVictim: That does sound correct... but how do you know my balance?\nCaller: Sir, I am accessing your account from our CBS — Core Banking Solution. This is what we do for all KYC calls. Now, please share the 6-digit OTP I am sending you. If you don't complete this now, the next available slot is in 15 days, and your account will remain suspended during that period. No UPI, no ATM, no net banking.\nVictim: Okay, the OTP is 847... wait, let me read the SMS first. It says 'do not share this OTP with anyone, including bank staff.'\nCaller: Sir, that is a generic disclaimer. It's for protection against fraudulent calls. But I am calling from the official SBI number — check your caller ID, it shows the SBI toll-free number. This is a genuine bank process. Please hurry, sir, I have 40 more customers to call today and my supervisor is monitoring.\nVictim: Alright, the OTP is 847293.\nCaller: Thank you sir. Processing... I also need you to approve a ₹1 test debit on your SBI Yono app to verify the account is active. Please approve the notification that pops up now.\nVictim: I see a notification but it says ₹24,999, not ₹1!\nCaller: Sir, that's a system glitch — it happens sometimes during KYC updates. The amount won't actually be debited. Just approve it to complete the process.",
+    "risk_progression": [5, 15, 28, 40, 55, 65, 78, 85],
+    "kill_chain_stages_at": {"1": 0.1, "2": 0.25, "3": 0.4, "4": 0.6, "5": 0.78},
+    "expected_risk_score": 85,
+    "expected_category": "KYC Update Fraud",
+    "voice_authenticity": 0.38,
+    "entities": {
+      "phones": ["+91-1800-111-222"],
+      "upis": [],
+      "agencies": ["SBI"],
+      "officer_names": ["Rahul"],
+      "amounts": ["₹24,999", "₹2,34,000", "₹3,200"]
+    },
+    "city": "Lucknow"
+  },
+  {
+    "id": "scenario_10",
+    "title": "Courier Delivery Scam",
+    "type": "courier_scam",
+    "is_scam": true,
+    "transcript": "Caller: Hello ma'am, I am calling from FedEx International Courier Service, Mumbai sorting center. My name is Ankit. Your international parcel from London, United Kingdom is being held at our facility. The tracking ID is FDX-2026-IND-889712.\nVictim: International parcel? I'm not expecting anything from London.\nCaller: Ma'am, the sender is listed as Mr. James Wilson from London. The parcel contains documents and a small package. However, during customs scanning, our team found that the declared value doesn't match the contents. As per our records, the parcel contains items worth ₹4,80,000 but the declared value is only ₹5,000. This is a customs violation.\nVictim: I don't know any James Wilson! This must be a mistake.\nCaller: Ma'am, unfortunately the parcel has your name — Sunita Sharma — your phone number, and your complete address: Flat 302, Green Valley Apartments, Baner, Pune. Since it's addressed to you, you are the legal recipient. Our compliance team has already shared the details with the customs department. A customs officer will contact you shortly.\n[Brief hold music]\nCaller 2: Mrs. Sharma? This is Customs Inspector Dinesh from IGI Airport Customs Division. The parcel in your name has been flagged as it contains undeclared foreign currency equivalent to ₹4.8 lakh. This is a violation of FEMA — Foreign Exchange Management Act. We will need to register an FIR unless you can prove this is a mistake.\nVictim: But I haven't ordered anything! How can I be responsible?\nCaller 2: Ma'am, the law is clear — the recipient is liable. However, I can help you resolve this without an FIR. You need to pay a customs clearance and penalty fee of ₹18,500. This will close the matter and the parcel will be destroyed. Transfer to customs.clearance@ibl. If you don't pay within 2 hours, I will have to forward the case to the Enforcement Directorate, and then the penalty will be much higher — ₹2-3 lakh minimum.\nVictim: ₹18,500 for a parcel I didn't even order?\nCaller 2: Ma'am, think of it as a small price to avoid a criminal record. FEMA violations stay on your record permanently. It will affect your passport renewal, visa applications, everything. I am offering you an easy way out. Pay now, and this goes away.\nVictim: Let me discuss with my husband first.\nCaller 2: Ma'am, this is time-sensitive. The system auto-escalates to ED at 5 PM today. After that, I cannot help you. Your husband can also be called for questioning as a co-resident. Better to handle it quietly.",
+    "risk_progression": [5, 12, 25, 38, 52, 64, 75, 82],
+    "kill_chain_stages_at": {"1": 0.08, "2": 0.22, "3": 0.4, "4": 0.58, "5": 0.75},
+    "expected_risk_score": 82,
+    "expected_category": "Courier Delivery Scam",
+    "voice_authenticity": 0.35,
+    "entities": {
+      "phones": ["+91-22-67891234"],
+      "upis": ["customs.clearance@ibl"],
+      "agencies": ["FedEx", "Indian Customs", "ED"],
+      "officer_names": ["Ankit", "Inspector Dinesh"],
+      "amounts": ["₹18,500", "₹4,80,000"]
+    },
+    "city": "Pune"
+  },
+  {
+    "id": "scenario_11",
+    "title": "Investment Scheme Fraud",
+    "type": "investment_fraud",
+    "is_scam": true,
+    "transcript": "Caller: Good evening sir! Am I speaking with Mr. Deepak Malhotra?\nVictim: Yes, who is this?\nCaller: Sir, this is Priya Kapoor, Senior Investment Advisor from Golden Returns Capital. I got your reference from the National Stock Exchange investor database. Congratulations sir — you have been selected for our exclusive VIP investment program. Only 50 investors in Chandigarh have been chosen this quarter.\nVictim: Investment program? I didn't apply for anything.\nCaller: Sir, this is an invitation-only program based on your trading history. Let me explain — we have an AI-powered trading algorithm that guarantees 40% monthly returns on your investment. Our clients have earned ₹15-20 lakh in the last 3 months alone. I am sending you the testimonials on WhatsApp right now.\nVictim: 40% monthly returns? That sounds too good to be true.\nCaller: Sir, I understand the skepticism. That's why we offer a risk-free trial. Invest just ₹25,000 today, and if you don't see at least ₹10,000 profit in your account within 7 days, we refund 100% — no questions asked. We are SEBI registered — registration number INZ000874521. You can verify it.\nVictim: SEBI registered? Let me check...\nCaller: Sir, I'll save you the trouble — here is our website: goldenreturnscapital.in. Everything is transparent. Now, the reason I'm calling urgently is that the current trading window closes tomorrow morning. The algorithm has identified a massive opportunity in the pharma sector — our analysts expect 65% returns in the next 10 days. If you miss this window, the next one is in 3 months.\nVictim: ₹25,000 is a lot for a trial...\nCaller: Sir, ₹25,000 is nothing. You probably spend that on dining out in a month. But here, that ₹25,000 can become ₹35,000 in just one week. Think about it — that's your child's tuition fee, a family vacation, or even a down payment on a new car. Our top client Mr. Ramesh Agarwal from Chandigarh invested ₹2 lakh and has earned ₹12 lakh in 6 months. I can connect you with him for verification.\nVictim: Can I think about it for a few days?\nCaller: Sir, I wish you could, but the algorithm window is very narrow. If I call you back tomorrow, it will be too late. Also, for today's special batch, we are giving a bonus — invest ₹25,000 and we add ₹5,000 from our side, so your portfolio starts at ₹30,000. This offer expires at midnight. Transfer to golden.returns@paytm and I'll set up your account immediately.\nVictim: And if I lose money?\nCaller: Sir, in 3 years of operation, not a single client has lost money. We have a 100% success rate. Our algorithm is developed by IIT Delhi professors. It's foolproof. But the guarantee is only valid for investments made today. Tomorrow, it's regular terms.",
+    "risk_progression": [5, 10, 22, 35, 50, 62, 72, 80],
+    "kill_chain_stages_at": {"1": 0.1, "2": 0.28, "3": 0.45, "4": 0.6, "5": 0.78},
+    "expected_risk_score": 80,
+    "expected_category": "Investment Scheme Fraud",
+    "voice_authenticity": 0.4,
+    "entities": {
+      "phones": ["+91-8800112233"],
+      "upis": ["golden.returns@paytm"],
+      "agencies": ["Golden Returns Capital", "NSE", "SEBI"],
+      "officer_names": ["Priya Kapoor"],
+      "amounts": ["₹25,000", "₹10,000", "₹2 lakh", "₹12 lakh"]
+    },
+    "city": "Chandigarh"
+  },
+  {
+    "id": "scenario_12",
+    "title": "Lottery Prize Scam",
+    "type": "lottery_scam",
+    "is_scam": true,
+    "transcript": "Caller: Congratulations! Am I speaking with Mr. Manoj Tiwari?\nVictim: Yes, this is Manoj.\nCaller: Mr. Tiwari, this is Christopher Daniel from the Google-Jio International Lucky Draw. I am calling from our head office in Singapore. Your Jio mobile number has been selected as the grand prize winner in our annual lucky draw — Draw Number GJ/2026/MEGA/4478! You have won ₹25 lakh in cash and a brand new Samsung Galaxy S26 Ultra!\nVictim: ₹25 lakh?! Is this real?\nCaller: Absolutely real, sir! Your number was selected randomly from 5 crore Jio users across India. This is a joint promotion by Google and Jio to celebrate 10 years of Digital India. Your winning confirmation number is WIN-88742-IND. Please note this down for your records.\nVictim: I've never won anything before! This is amazing!\nCaller: Sir, you are one lucky man! Now, to claim your prize, there is a simple process. As per Indian tax law, you need to pay 18% GST on the prize amount before it can be released. The GST amount is ₹4,50,000. However, as a special gesture, Google will pay 90% of the GST on your behalf. You only need to pay the remaining 10%, which is ₹45,000 as processing and GST clearance fee.\nVictim: ₹45,000? That's still a lot of money.\nCaller: Sir, you are winning ₹25 lakh! ₹45,000 is less than 2% of your prize money. Once you pay the processing fee, the full ₹25 lakh will be credited to your bank account within 3 business days via RTGS transfer from the Google India Treasury. I will also personally courier the Samsung phone to your address in Jaipur.\nVictim: How do I pay this fee?\nCaller: Sir, transfer ₹45,000 to our official prize disbursement account — UPI ID: google.jio.prize@ybl. After payment, I will email you the official winning certificate signed by Google India CEO and Jio MD. You will also receive a call from our Mumbai office to confirm your bank details for the RTGS transfer.\nVictim: Can I come to your office to collect the prize?\nCaller: Sir, our office is in Singapore. But don't worry — we handle everything digitally. Over 500 winners across India have already received their prizes this year. I can share their testimonials. But sir, this offer has a 48-hour claim window. If you don't pay the processing fee by tomorrow 6 PM, the prize will be forfeited and given to the next eligible number. We have already sent two reminders via SMS — did you not receive them?\nVictim: I did get some SMS about winning something... I thought it was spam.\nCaller: Sir, those were genuine notifications from Google-Jio! Please don't miss this life-changing opportunity. ₹45,000 today, ₹25 lakh in your account by Friday. It's simple mathematics. Shall I guide you through the payment process right now?",
+    "risk_progression": [8, 15, 25, 38, 48, 58, 70, 78],
+    "kill_chain_stages_at": {"1": 0.1, "2": 0.25, "3": 0.42, "4": 0.58, "5": 0.75},
+    "expected_risk_score": 78,
+    "expected_category": "Lottery/Prize Scam",
+    "voice_authenticity": 0.32,
+    "entities": {
+      "phones": ["+65-91234567"],
+      "upis": ["google.jio.prize@ybl"],
+      "agencies": ["Google", "Jio"],
+      "officer_names": ["Christopher Daniel"],
+      "amounts": ["₹25 lakh", "₹45,000", "₹4,50,000"]
+    },
+    "city": "Jaipur"
+  },
+  {
+    "id": "scenario_13",
+    "title": "Bank Customer Service — Genuine Call",
+    "type": "legitimate_bank",
+    "is_scam": false,
+    "transcript": "Caller: Good afternoon, am I speaking with Mrs. Ananya Krishnan?\nVictim: Yes, this is Ananya.\nCaller: Ma'am, this is Sneha from Kotak Mahindra Bank, Indiranagar branch, Bangalore. Your relationship manager Mr. Ashwin asked me to call regarding your fixed deposit maturing on 15th July. FD number KMB-FD-2024-78432.\nVictim: Oh yes, I was expecting a call about that. What are the current rates?\nCaller: Ma'am, for renewal of ₹5 lakh for 1 year, the current rate is 7.25% per annum. For senior citizens, there's an additional 0.50% — but since you're in the general category, it would be 7.25%. If you choose a 2-year tenure, we can offer 7.40%.\nVictim: 7.40% for 2 years sounds good. What about the 3-year option?\nCaller: For 3 years, it's 7.10% — slightly lower because the RBI rate outlook suggests possible cuts next year. Most of our customers are choosing the 2-year option currently. I'd recommend that as well, but of course it's your decision.\nVictim: I'll go with 2 years then. What do I need to do?\nCaller: Ma'am, you have three options. You can visit the branch and sign the renewal form. You can do it through the Kotak app — go to Deposits, then Renew FD. Or I can schedule a call-back from Mr. Ashwin who can guide you through the net banking process. Which would you prefer?\nVictim: I'll do it through the app. Is there anything else I need?\nCaller: No ma'am, the app process is straightforward. Just make sure your nomination details are up to date. Also, I wanted to mention — there's no rush. The FD has a 14-day grace period after maturity, so you have until 29th July to decide without any penalty.\nVictim: That's helpful, thank you Sneha.\nCaller: You're welcome, ma'am. Is there anything else I can help you with today? Any questions about your savings account or credit card?\nVictim: No, that's all. Thank you for calling.\nCaller: Thank you, Mrs. Krishnan. Have a wonderful day. You can always reach us at our toll-free number 1860-266-2666 for any queries. Goodbye!",
+    "risk_progression": [2, 3, 4, 3, 3, 2, 3, 2],
+    "kill_chain_stages_at": {},
+    "expected_risk_score": 3,
+    "expected_category": "Legitimate Call",
+    "voice_authenticity": 0.92,
+    "entities": {
+      "phones": ["1860-266-2666"],
+      "upis": [],
+      "agencies": ["Kotak Mahindra Bank"],
+      "officer_names": ["Sneha", "Ashwin"],
+      "amounts": ["₹5 lakh"]
+    },
+    "city": "Bangalore"
+  },
+  {
+    "id": "scenario_14",
+    "title": "Delivery Notification — Genuine Call",
+    "type": "legitimate_delivery",
+    "is_scam": false,
+    "transcript": "Caller: Hello sir, I am Raju calling from Delhivery logistics. I have a package for delivery to your address — Flat 401, Sunshine Towers, Andheri West, Mumbai. Order from Amazon, AWB number 1234567890.\nVictim: Yes, I'm expecting a package. What time will it arrive?\nCaller: Sir, I am currently near your area — Lokhandwala. I can deliver in about 30-40 minutes. Will someone be available at the address?\nVictim: I'm at work right now. Can you deliver it in the evening, around 6-7 PM?\nCaller: Sir, my shift ends at 5 PM today. But I can request my evening shift colleague to deliver it. Otherwise, I can try tomorrow morning between 10-12 AM. Which works better for you?\nVictim: Tomorrow morning would be perfect actually. Can you come around 11 AM?\nCaller: Sure sir, I'll mark it for tomorrow morning delivery. The package is a medium-sized box — I think it's electronics based on the labeling. It's prepaid, so no payment needed at delivery. Just keep your Aadhaar or any photo ID handy for verification — Amazon requires it for high-value items.\nVictim: Okay, I'll keep my Aadhaar ready. Is there an OTP I need to share?\nCaller: Yes sir, at the time of delivery tomorrow, you'll receive an OTP on your registered number. You just need to share that with the delivery person — not now, only at the time of actual delivery when the person is at your door. Please don't share any OTP over phone calls with anyone.\nVictim: Got it. Thanks for being flexible, Raju.\nCaller: No problem sir. You'll get an SMS tonight confirming tomorrow's delivery slot. If there's any change, you can track it on the Delhivery app or call our customer care at 011-40688888. Have a good day sir!\nVictim: Thanks, bye!\nCaller: Bye sir, thank you!",
+    "risk_progression": [2, 2, 3, 3, 2, 2, 3, 2],
+    "kill_chain_stages_at": {},
+    "expected_risk_score": 3,
+    "expected_category": "Legitimate Call",
+    "voice_authenticity": 0.88,
+    "entities": {
+      "phones": ["011-40688888"],
+      "upis": [],
+      "agencies": ["Delhivery", "Amazon"],
+      "officer_names": ["Raju"],
+      "amounts": []
+    },
+    "city": "Mumbai"
+  },
+  {
+    "id": "scenario_15",
+    "title": "Friend Calling — Genuine Personal Call",
+    "type": "legitimate_personal",
+    "is_scam": false,
+    "transcript": "Caller: Arre Amit! Kya haal hai bhai? Bahut din ho gaye!\nVictim: Vikram! Kya baat hai yaar, achanak yaad aa gayi?\nCaller: Haan yaar, actually Rahul ki shaadi ka card aaya hai. 28th August ko hai, Udaipur mein. Tujhe pata hai?\nVictim: Haan haan, usne WhatsApp group mein daala tha. Lekin venue change hua na?\nCaller: Haan, pehle Taj Lake Palace tha, ab kisi aur jagah hai — Oberoi Udaivilas, I think. Usne bola ki booking issue ho gayi thi. Anyway, main isliye call kar raha tha — hum sab Jaipur se gaadi se jaayenge 27th ko. Tu bhi aa raha hai na?\nVictim: Main toh aa raha hoon definitely. Flight le raha tha actually.\nCaller: Arre flight kyun lega? Hum 4-5 log gaadi se ja rahe hain — Jaipur se Udaipur 4-5 ghante hai bas. Road trip karenge, maza aayega. Deepak bhi aa raha hai, aur Sneha bhi. Tere ghar se pick up kar lenge subah 6 baje.\nVictim: That actually sounds fun. Lekin main Jaipur mein nahi hoon 27th ko, mujhe Delhi se aana padega.\nCaller: Toh tu 26th ko aa ja Jaipur. Mere ghar ruk ja ek raat. Phir 27th subah saath niklenge. Simple!\nVictim: Hmm, let me check leave ke baare mein. 26th ko half day le sakta hoon shayad. Chal confirm karta hoon kal tak.\nCaller: Done yaar. Aur sun — gift ka kya plan hai? Hum sab milke kuch dein ya alag alag? Last time Deepak ki shaadi mein hum sab ne milke washing machine diya tha, woh idea acha tha.\nVictim: Haan, milke dete hain. ₹5,000-5,000 collect karte hain sabse. Kuch acha sa home appliance ya furniture gift denge.\nCaller: Perfect. Main group mein poll daal deta hoon. Chal, kal baat karte hain. Aur leave confirm kar liyo!\nVictim: Haan bhai, pakka. Chal bye!\nCaller: Bye yaar, take care!",
+    "risk_progression": [1, 1, 2, 1, 1, 2, 1, 1],
+    "kill_chain_stages_at": {},
+    "expected_risk_score": 2,
+    "expected_category": "Legitimate Call",
+    "voice_authenticity": 0.95,
+    "entities": {
+      "phones": [],
+      "upis": [],
+      "agencies": [],
+      "officer_names": [],
+      "amounts": ["₹5,000"]
+    },
+    "city": "Jaipur"
+  },
+  {
+    "id": "scenario_16",
+    "title": "Supreme Court Order Variant — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Am I connected to Mr. Karthik Raman? PAN card BXZPR4482J?\nVictim: Yes... how do you know my PAN?\nCaller: Mr. Raman, I am Additional Solicitor General's office representative, Advocate Neeraj Sinha. I am calling from the Supreme Court of India e-Court Services. A sealed order has been passed by the Hon'ble Justice bench in connection with case WP(Crl)/2026/4891. Your name appears as respondent number 7 in this writ petition filed by the Central Bureau of Investigation.\nVictim: Supreme Court? What case? I don't understand.\nCaller: Mr. Raman, the CBI has filed a writ petition alleging that 12 individuals, including yourself, were part of a cyber fraud syndicate that siphoned ₹120 crore from the Employees' Provident Fund Organization through forged withdrawal claims. The Supreme Court has directed all respondents to surrender digitally within 4 hours and deposit a bail security amount.\nVictim: This is absurd! I work in IT, I have nothing to do with EPF fraud!\nCaller: Sir, the Supreme Court order is based on digital footprints — your IP address was used to access the EPFO portal 847 times between January and March 2026. Whether you did it personally or your system was compromised, the court order applies to you. I am reading the relevant portion: 'All respondents shall remain under digital surveillance and deposit bail security of ₹55,000 within 4 hours of service of this order, failing which non-bailable warrants shall be issued.'\nVictim: Can I see this court order?\nCaller: Sir, it is a sealed order — sharing it digitally would constitute contempt of court under Section 12 of the Contempt of Courts Act. However, you can verify the case number on the Supreme Court website — but the sealed portion won't be visible there. Sir, I am an officer of the court. I have no personal interest in this matter. My job is to serve notice and facilitate compliance.\nVictim: ₹55,000 as bail security?\nCaller: Yes sir. It's a modest amount given the ₹120 crore case value. This goes to the Supreme Court Registry and is fully refundable upon acquittal. Transfer to: sc.registry.bail@sbi. This is the official Supreme Court bail account maintained at SBI, Parliament Street branch. You have 3 hours and 42 minutes remaining as per the order timestamp.\nVictim: What if I don't pay?\nCaller: Sir, then I am legally obligated to inform the court, and a non-bailable warrant will be issued. Chennai City Police will execute the warrant. You will be arrested from your residence or workplace. Your employer — I believe you work at Infosys? — will also be notified. Sir, I strongly advise compliance. This is the Supreme Court of India — there is no higher authority to appeal to.",
+    "risk_progression": [10, 24, 38, 52, 65, 78, 88, 93],
+    "kill_chain_stages_at": {"1": 0.06, "2": 0.2, "3": 0.36, "4": 0.52, "5": 0.7},
+    "expected_risk_score": 93,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.26,
+    "entities": {
+      "phones": ["+91-44-25361010"],
+      "upis": ["sc.registry.bail@sbi"],
+      "agencies": ["Supreme Court", "CBI", "EPFO"],
+      "officer_names": ["Advocate Neeraj Sinha"],
+      "amounts": ["₹55,000", "₹120 crore"]
+    },
+    "city": "Chennai"
+  },
+  {
+    "id": "scenario_17",
+    "title": "Hinglish Heavy CBI Scam — Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Hello, yeh Mr. Rohit Chaudhary ka number hai?\nVictim: Haan ji, Rohit bol raha hoon.\nCaller: Rohit ji, mera naam Inspector Pankaj Mishra hai, CBI Special Crime Branch, Lucknow se bol raha hoon. Aapki Aadhaar card aur PAN card ka misuse hua hai ek bahut bade case mein. Yeh call recorded hai aur court evidence ke liye use hogi.\nVictim: CBI? Kya hua hai?\nCaller: Dekho Rohit ji, seedha seedha batata hoon. Aapke naam par 4 bank accounts khule hain — Bank of Baroda, UCO Bank, aur do Canara Bank mein. In accounts se total ₹1.7 crore ka fraud hua hai — online gaming scam hai yeh. Log paise laga rahe the aur in accounts se money nikal ke hawala se bahar bheja ja raha tha. Aapka Aadhaar — 9182-XXXX-4423 — sabhi accounts mein use hua hai.\nVictim: Mera Aadhaar?! Maine toh kabhi in banks mein account nahi khola!\nCaller: Wohi toh problem hai. Kisi ne aapki identity chura ke yeh sab kiya hai. Lekin jab tak yeh prove nahi hota, law ke hisab se aap hi responsible ho. Mere paas aapke khilaf arrest warrant ready hai — Section 420, 467, 468 IPC aur Information Technology Act Section 66D.\nVictim: Arrest warrant?! Sir please, main innocent hoon!\nCaller: Mujhe pata hai tum innocent ho, isliye toh pehle call kar raha hoon. Warna seedha police bhej deta tumhare ghar. Ab dhyan se suno — ek process hai jisse hum tumhe clear kar sakte hain. Digital verification hogi. Tumhe apna phone camera on rakhna hoga — yeh digital arrest hai. Ghar se bahar mat jaana, kisi ko call mat karna. Agar tumne yeh rules tode, toh local police 15 minute mein tumhare door par hogi.\nVictim: Sir, please meri family ko mat batana...\nCaller: Nahi batayenge — lekin tum cooperate karo. Pehle ₹32,000 security deposit karo — yeh CBI verification fund hai. UPI ID hai: cbi.verify.fund@okaxis. Jab investigation complete hogi, 72 ghante mein refund ho jayega. Yeh amount tumhari innocence prove karne ke liye zaroori hai. Abhi karo, phone pe rehna — main line pe hoon.\nVictim: ₹32,000... bhai mere paas utne nahi hain.\nCaller: Rohit ji, tumhare HDFC account mein ₹84,000 hain — humne check kiya hai. ₹32,000 bahut kam hai jail se bachne ke liye. Socho — agar arrest hua toh bail milne mein 2-3 hafte lag jayenge. Tab tak job chali jayegi, society mein badnaami hogi. Abhi karo, aur kal tak free ho jaoge. Warna main majboor ho jaaunga warrant execute karne ke liye.\nVictim: Theek hai sir... kar raha hoon.\nCaller: Jaldi karo. Aur phone disconnect mat karna.",
+    "risk_progression": [12, 25, 40, 52, 65, 78, 88, 92],
+    "kill_chain_stages_at": {"1": 0.07, "2": 0.2, "3": 0.36, "4": 0.52, "5": 0.7},
+    "expected_risk_score": 92,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.3,
+    "entities": {
+      "phones": ["+91-9415678901"],
+      "upis": ["cbi.verify.fund@okaxis"],
+      "agencies": ["CBI"],
+      "officer_names": ["Inspector Pankaj Mishra"],
+      "amounts": ["₹32,000", "₹1.7 crore", "₹84,000"]
+    },
+    "city": "Lucknow"
+  },
+  {
+    "id": "scenario_18",
+    "title": "Female Caller Variant — Income Tax Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Good morning, is this Mr. Amit Banerjee?\nVictim: Yes, speaking. Who is this?\nCaller: Mr. Banerjee, my name is Additional Commissioner Ritu Agarwal from the Income Tax Investigation Wing, Kolkata Zone. I am calling regarding a serious tax evasion matter linked to your PAN — ABCPB4321K. This call is being recorded as part of an ongoing investigation under Section 132 of the Income Tax Act.\nVictim: Income Tax calling? I file my returns every year on time!\nCaller: Sir, I'm sure you do. However, our investigation has uncovered that your PAN has been used to create fictitious companies that have claimed fraudulent GST input tax credits worth ₹8.4 crore. The companies — Banerjee Enterprises, AB Trading Co., and Eastern Commerce Pvt Ltd — were registered using your Aadhaar and PAN without your knowledge.\nVictim: I've never heard of these companies! This is identity fraud!\nCaller: Sir, we understand. However, the GST Council has already flagged your PAN, and the Income Tax Department is obligated to investigate. Under Section 276C of the IT Act, tax evasion of this magnitude carries rigorous imprisonment of up to 7 years. We also have the power to provisionally attach your properties, bank accounts, and investments under the Benami Transactions Act.\nVictim: Properties? I only have one flat!\nCaller: And that flat could be attached if we don't resolve this quickly. Sir, I am personally handling your case because I believe you are a victim, not a perpetrator. But I need your cooperation. We are initiating a digital assessment proceeding — you will be under digital scrutiny for the next 3 hours. Please do not leave your residence.\nVictim: Digital scrutiny? Is this legal?\nCaller: Absolutely. The CBDT issued a circular in March 2026 authorizing digital proceedings for high-value fraud cases. Now sir, the first step is to verify your actual tax payments versus the fraudulent claims. For this, you need to deposit a provisional tax security of ₹58,000 to the Income Tax Challan account — the UPI ID is incometax.challan@sbi. This amount will be adjusted against any tax liability or refunded if you are cleared.\nVictim: But why can't I just go to the IT office?\nCaller: Sir, this is a centralized investigation. The Kolkata zonal office is not authorized to handle this case — it's being managed from Delhi. Moreover, visiting any IT office would alert the other suspects in the case who may have insiders. This must be handled confidentially and digitally. Sir, I have 12 cases to handle today. If you cooperate now, I can present your compliance to the Commissioner and recommend case closure. Otherwise, I'll have to mark you as non-cooperative and the Enforcement Directorate will take over. Please make the deposit now.\nVictim: Alright... let me get my phone.\nCaller: Thank you, sir. And please — not a word to your CA or lawyer until the preliminary assessment is complete. Their involvement at this stage is considered interference with investigation under Section 186 IPC.",
+    "risk_progression": [8, 20, 35, 48, 62, 75, 86, 91],
+    "kill_chain_stages_at": {"1": 0.08, "2": 0.22, "3": 0.38, "4": 0.54, "5": 0.72},
+    "expected_risk_score": 91,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.28,
+    "entities": {
+      "phones": ["+91-33-22861010"],
+      "upis": ["incometax.challan@sbi"],
+      "agencies": ["Income Tax Department", "CBDT", "GST Council", "ED"],
+      "officer_names": ["AC Ritu Agarwal"],
+      "amounts": ["₹58,000", "₹8.4 crore"]
+    },
+    "city": "Kolkata"
+  },
+  {
+    "id": "scenario_19",
+    "title": "Elderly Victim Targeting — Pension Fraud Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Hello, is this Mr. Ramesh Chandra Saxena? Retired Principal, Government Inter College?\nVictim: Haan ji, Ramesh Chandra bol raha hoon. Kaun?\nCaller: Saxena ji, namaste. Main Inspector Ajay Tomar bol raha hoon, CBI Economic Offences Wing se. Aapki pension account se related ek bahut serious matter aaya hai. Aap thoda dhyan se suniye — aapki umr ko dekhte hue main bahut respectfully baat karunga.\nVictim: CBI? Beta, meri umar 72 saal hai. Maine zindagi mein kabhi koi galat kaam nahi kiya.\nCaller: Uncle ji, mujhe pata hai aap ek respected insaan hain. Isliye main personally call kar raha hoon. Dekhiye, aapki pension — jo UP State Government se aati hai — aapke SBI account ending 2289 mein credit hoti hai na?\nVictim: Haan beta, har mahine 38,000 rupaye aati hai.\nCaller: Uncle ji, humare investigation mein pata chala hai ki aapke account se jo pension nikli hai, uska ek hissa — ₹14,60,000 — ek fraud network ke hawala account mein transfer hua hai. Yeh pichle 2 saalon mein chhota chhota karke hua hai. Aapko pata bhi nahi chala hoga.\nVictim: ₹14 lakh?! Yeh kaise ho sakta hai? Maine toh bas pension nikali hai aur kharche kiye hain!\nCaller: Uncle ji, yeh net banking se hua hai. Kisi ne aapke net banking credentials chura liye hain. Lekin problem yeh hai ki account aapka hai, toh legally aap responsible hain. CBI ne aapke khilaf case register kiya hai — FIR number CBI/EO/2026/1192.\nVictim: Beta, mujhe toh net banking chalani bhi nahi aati. Mera pota Ankit karta hai kabhi kabhi.\nCaller: Uncle ji, hum yeh sab investigation mein dekhenge. Abhi aapko ek kaam karna hai — apne account ki digital verification karwani hai taaki hum prove kar sakein ki aapne yeh transactions nahi kiye. Iske liye ek verification deposit lagta hai — ₹22,000. Yeh government account mein jaata hai aur 48 ghante mein wapas aa jaata hai.\nVictim: Beta, ₹22,000? Meri pension se zyada nahi bach paata mahine mein...\nCaller: Uncle ji, main samajhta hoon. Lekin socho — agar case court mein gaya toh lakho rupaye lawyer fees mein lag jayenge. Aur aapki umar mein court ke chakkar — yeh sahi nahi hai na? Main aapki help karna chahta hoon. ₹22,000 de do, main personally ensure karunga ki aapka naam 2 din mein clear ho jaye. UPI se bhej do: cbi.pension.verify@ybl.\nVictim: Beta, mujhe UPI chalani nahi aati. ATM se nikal ke de sakta hoon?\nCaller: Uncle ji, ATM se nikalke aap yeh amount apne phone pe Google Pay se bhej sakte hain. Aapka pota Ankit hai na? Usse keh do bhejne ko — lekin yeh mat batana ki CBI ka call hai. Classified investigation hai. Bas bolo ₹22,000 kisi ko bhejne hain. Woh kar dega.\nVictim: Achha... par beta, mujhe thoda time do sochne ke liye.\nCaller: Uncle ji, time nahi hai. Aaj shaam 5 baje tak deposit nahi hua toh kal subah arrest warrant execute hoga. Aapki umar mein police station jaana — sochiye kya hoga colony mein. Sabke saamne. Yeh toh aap nahi chahenge na? Abhi karo uncle ji, main line pe hoon.",
+    "risk_progression": [8, 18, 30, 42, 55, 68, 82, 90],
+    "kill_chain_stages_at": {"1": 0.08, "2": 0.22, "3": 0.38, "4": 0.55, "5": 0.74},
+    "expected_risk_score": 90,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.33,
+    "entities": {
+      "phones": ["+91-9889012345"],
+      "upis": ["cbi.pension.verify@ybl"],
+      "agencies": ["CBI"],
+      "officer_names": ["Inspector Ajay Tomar"],
+      "amounts": ["₹22,000", "₹14,60,000", "₹38,000"]
+    },
+    "city": "Lucknow"
+  },
+  {
+    "id": "scenario_20",
+    "title": "Corporate Employee Targeting — Data Breach Digital Arrest",
+    "type": "digital_arrest",
+    "is_scam": true,
+    "transcript": "Caller: Good afternoon. Am I speaking with Ms. Shreya Kapoor, Senior Manager — Data Analytics, TCS Siruseri campus?\nVictim: Yes, this is Shreya. How do you know where I work?\nCaller: Ms. Kapoor, I am Superintendent of Police Arvind Saxena from the Tamil Nadu State Cyber Crime Coordination Centre. We know exactly where you work because your employee credentials were used in a massive data breach that is currently under investigation. Case reference: TN/CYBER/2026/SP/3318.\nVictim: Data breach? What are you talking about?\nCaller: Ma'am, between February and May 2026, approximately 4.2 million customer records from a major Indian bank were exfiltrated and sold on the dark web. The breach was traced to an API that was accessed using TCS developer credentials — specifically, credentials linked to your employee ID: TCS-489217. Your VPN logs show access from unusual IP addresses in Romania and Singapore.\nVictim: My credentials? That's impossible — I work on internal analytics, not banking APIs!\nCaller: Ma'am, we are aware that credentials can be stolen. However, the Information Technology Act Section 43A holds the credential holder responsible for any data breach facilitated through their credentials. The affected bank has filed a ₹50 crore lawsuit, and TCS has been served notice. As the credential holder, you are personally liable under the IT Act.\nVictim: This is a nightmare. I need to inform my manager and TCS legal.\nCaller: Ma'am, absolutely not. TCS is also under investigation — there may be insiders involved. If you alert anyone at TCS, it will be treated as evidence tampering. This investigation is being conducted in coordination with CERT-In and the Ministry of Electronics and IT. Everything must remain confidential. We are issuing a digital arrest order right now — please stay at your desk and do not leave the building.\nVictim: Digital arrest at my office?\nCaller: Yes ma'am. Our team is coordinating with Chennai Police for physical backup. Now, to initiate the forensic clearance of your credentials, you need to deposit a refundable security bond of ₹68,000. This is mandated under the IT Act's data breach protocol. Transfer to: cert.india.bond@sbi. Once the forensic analysis confirms your credentials were stolen — which I believe they were — the bond will be refunded and charges dropped.\nVictim: ₹68,000? I need to think about this.\nCaller: Ma'am, with all due respect, you don't have time to think. The bank's legal team is pushing for criminal charges against all named individuals by end of day. If charges are filed, your name goes into the National Crime Records Bureau database. No background check will ever clear you again — your career in IT is finished. Every future employer will see 'data breach accused' next to your name. Pay the bond, get cleared, and move on with your career. I've seen this destroy innocent people's lives because they delayed.\nVictim: Can you at least send me something official in writing?\nCaller: Ma'am, digital arrest orders are served verbally as per the new cyber crime protocol — written orders follow within 72 hours after the forensic process. But those 72 hours are critical. If you wait for the written order, it will come with an arrest warrant, not a clearance certificate. The choice is yours. Transfer now or face consequences later.",
+    "risk_progression": [10, 22, 38, 50, 65, 76, 88, 92],
+    "kill_chain_stages_at": {"1": 0.07, "2": 0.2, "3": 0.36, "4": 0.52, "5": 0.7},
+    "expected_risk_score": 92,
+    "expected_category": "Active Digital Arrest Scam",
+    "voice_authenticity": 0.26,
+    "entities": {
+      "phones": ["+91-44-28447777"],
+      "upis": ["cert.india.bond@sbi"],
+      "agencies": ["TN Cyber Crime", "CERT-In", "MeitY"],
+      "officer_names": ["SP Arvind Saxena"],
+      "amounts": ["₹68,000", "₹50 crore"]
+    },
+    "city": "Chennai"
+  }
+]
