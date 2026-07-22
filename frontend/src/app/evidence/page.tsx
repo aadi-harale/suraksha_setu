@@ -13,6 +13,7 @@ import FalsePositiveQueue from '@/components/validation/false-positive-queue';
 import ComplaintReadyExport from '@/components/validation/complaint-ready-export';
 import RubricMapping from '@/components/validation/rubric-mapping';
 import FIRGenerator from '@/components/validation/FIRGenerator';
+import PrototypeScopeCard from '@/components/validation/PrototypeScopeCard';
 
 import { mockEvidenceData } from '@/lib/case-packet-utils';
 
@@ -49,6 +50,7 @@ export default function EvidencePage() {
               <ConfusionMatrix />
            </div>
            
+           <PrototypeScopeCard />
            <BaselineComparison />
            <FalsePositiveQueue />
         </div>

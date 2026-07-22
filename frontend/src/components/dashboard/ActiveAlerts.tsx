@@ -50,7 +50,7 @@ export default function ActiveAlerts() {
                     onClick={() => setActiveTakedownId(alert.id)}
                     className="w-full mt-2 py-1.5 rounded bg-red-600/10 hover:bg-red-600 border border-red-600/30 text-red-500 hover:text-white transition-all text-[10px] font-bold uppercase tracking-wider flex justify-center items-center gap-1.5 shadow-[0_0_15px_rgba(220,38,38,0.15)] hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] group"
                    >
-                     <ShieldAlert className="w-3 h-3 group-hover:animate-pulse" /> Initiate Takedown Protocol
+                     <ShieldAlert className="w-3 h-3 group-hover:animate-pulse" /> Prepare Escalation Package
                    </button>
                  )}
               </div>

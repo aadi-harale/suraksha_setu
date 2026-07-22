@@ -175,6 +175,8 @@ export default function IndiaMap() {
     })
   ];
 
+  const [mapMode, setMapMode] = useState<'3d' | 'lite'>('3d');
+
   return (
     <div className="glass-panel rounded-xl border border-slate-800 flex flex-col shadow-[0_0_30px_rgba(16,185,129,0.05)] relative overflow-hidden h-full w-full">
        <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
@@ -182,53 +184,110 @@ export default function IndiaMap() {
             <MapIcon className="w-4 h-4 text-emerald-500" />
             <h3 className="font-semibold text-slate-200 text-sm">Live Geospatial Threat Map</h3>
           </div>
-          <div className="bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-lg border border-slate-700/50 flex gap-4 text-xs font-mono text-slate-400 shadow-xl pointer-events-auto">
-             <span className="flex items-center gap-1.5">
-               <span className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></span> Critical
-             </span>
-             <span className="flex items-center gap-1.5">
-               <span className="w-2 h-2 rounded-full bg-orange-500"></span> High
-             </span>
+          
+          <div className="pointer-events-auto flex gap-2">
+            <div className="bg-slate-900/90 backdrop-blur-md p-1 rounded-lg border border-slate-700/50 flex shadow-xl">
+              <button 
+                onClick={() => setMapMode('3d')}
+                className={`px-3 py-1 text-xs font-bold rounded ${mapMode === '3d' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
+              >
+                3D War Room
+              </button>
+              <button 
+                onClick={() => setMapMode('lite')}
+                className={`px-3 py-1 text-xs font-bold rounded ${mapMode === 'lite' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
+              >
+                Lite Map
+              </button>
+            </div>
           </div>
        </div>
        
-       <div className="flex-1 relative w-full h-full bg-slate-950">
-          <DeckGL
-            viewState={viewState}
-            onViewStateChange={({viewState}) => setViewState(viewState as any)}
-            controller={true}
-            layers={layers}
-            getCursor={({isDragging}) => isDragging ? 'grabbing' : 'crosshair'}
-          >
-            <Map 
-              mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json"
-              attributionControl={false}
-            />
-          </DeckGL>
+       <div className="flex-1 relative w-full h-full bg-slate-950 flex items-center justify-center">
+          {mapMode === '3d' ? (
+            <>
+              <DeckGL
+                viewState={viewState}
+                onViewStateChange={({viewState}) => setViewState(viewState as any)}
+                controller={true}
+                layers={layers}
+                getCursor={({isDragging}) => isDragging ? 'grabbing' : 'crosshair'}
+              >
+                <Map 
+                  mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json"
+                  attributionControl={false}
+                />
+              </DeckGL>
 
-          {hoverInfo && hoverInfo.object && (
-            <div 
-              className="absolute z-50 pointer-events-none bg-slate-900/95 border border-slate-700 p-3.5 rounded-lg shadow-2xl backdrop-blur-sm min-w-[180px]"
-              style={{
-                left: hoverInfo.x,
-                top: hoverInfo.y,
-                transform: 'translate(-50%, -100%)',
-                marginTop: '-25px'
-              }}
-            >
-              <div className="flex justify-between items-center mb-2 pb-2 border-b border-slate-800">
-                <div className="font-bold text-slate-200 text-sm tracking-wide">{hoverInfo.object.name}</div>
-                <span className={`text-[9px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded ${hoverInfo.object.risk === 'Critical' ? 'bg-red-500/20 text-red-400' : hoverInfo.object.risk === 'High' ? 'bg-orange-500/20 text-orange-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
-                  {hoverInfo.object.risk}
-                </span>
+              {hoverInfo && hoverInfo.object && (
+                <div 
+                  className="absolute z-50 pointer-events-none bg-slate-900/95 border border-slate-700 p-3.5 rounded-lg shadow-2xl backdrop-blur-sm min-w-[180px]"
+                  style={{
+                    left: hoverInfo.x,
+                    top: hoverInfo.y,
+                    transform: 'translate(-50%, -100%)',
+                    marginTop: '-25px'
+                  }}
+                >
+                  <div className="flex justify-between items-center mb-2 pb-2 border-b border-slate-800">
+                    <div className="font-bold text-slate-200 text-sm tracking-wide">{hoverInfo.object.name}</div>
+                    <span className={`text-[9px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded ${hoverInfo.object.risk === 'Critical' ? 'bg-red-500/20 text-red-400' : hoverInfo.object.risk === 'High' ? 'bg-orange-500/20 text-orange-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
+                      {hoverInfo.object.risk}
+                    </span>
+                  </div>
+                  <div className="text-xs flex justify-between gap-4 py-1">
+                    <span className="text-slate-400">Active Cases:</span>
+                    <span className="font-bold text-white text-sm">{hoverInfo.object.cases}</span>
+                  </div>
+                  <div className="text-[10px] text-slate-500 mt-2 bg-slate-950/50 p-2 rounded border border-slate-800">
+                    <div className="mb-0.5 uppercase tracking-wider">Top Vector</div>
+                    <div className="text-emerald-400/90 font-medium">{hoverInfo.object.topScam}</div>
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="w-full h-full relative bg-slate-900 flex items-center justify-center p-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                {CITIES.filter(c => ['mumbai', 'pune', 'delhi', 'jaipur', 'bengaluru', 'chennai'].includes(c.id)).map(city => (
+                  <div key={city.id} className="bg-slate-800/80 p-4 rounded-xl border border-slate-700 relative overflow-hidden">
+                    <div className={`absolute top-0 right-0 w-20 h-20 -mr-10 -mt-10 rounded-full blur-xl opacity-20 ${
+                      city.risk === 'Critical' ? 'bg-red-500' : city.risk === 'High' ? 'bg-orange-500' : 'bg-yellow-500'
+                    }`}></div>
+                    
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="font-bold text-lg text-slate-200">{city.name}</div>
+                      <span className="relative flex h-3 w-3">
+                        <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                          city.risk === 'Critical' ? 'bg-red-400' : city.risk === 'High' ? 'bg-orange-400' : 'bg-yellow-400'
+                        }`}></span>
+                        <span className={`relative inline-flex rounded-full h-3 w-3 ${
+                          city.risk === 'Critical' ? 'bg-red-500' : city.risk === 'High' ? 'bg-orange-500' : 'bg-yellow-500'
+                        }`}></span>
+                      </span>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-400">Active Cases</span>
+                        <span className="font-mono text-white font-bold">{city.cases}</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-400">Risk Level</span>
+                        <span className={`font-mono text-xs uppercase font-bold ${
+                          city.risk === 'Critical' ? 'text-red-400' : city.risk === 'High' ? 'text-orange-400' : 'text-yellow-400'
+                        }`}>{city.risk}</span>
+                      </div>
+                      <div className="pt-2 mt-2 border-t border-slate-700">
+                        <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Top Vector</div>
+                        <div className="text-xs text-slate-300 truncate" title={city.topScam}>{city.topScam}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="text-xs flex justify-between gap-4 py-1">
-                <span className="text-slate-400">Active Cases:</span>
-                <span className="font-bold text-white text-sm">{hoverInfo.object.cases}</span>
-              </div>
-              <div className="text-[10px] text-slate-500 mt-2 bg-slate-950/50 p-2 rounded border border-slate-800">
-                <div className="mb-0.5 uppercase tracking-wider">Top Vector</div>
-                <div className="text-emerald-400/90 font-medium">{hoverInfo.object.topScam}</div>
+              <div className="absolute bottom-4 left-0 right-0 text-center text-slate-500 text-xs uppercase tracking-widest font-mono">
+                Lite Map Fallback Mode Active
               </div>
             </div>
           )}

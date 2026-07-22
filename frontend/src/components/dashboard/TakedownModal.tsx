@@ -65,8 +65,8 @@ export default function TakedownModal({ isOpen, onClose, caseId }: TakedownModal
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-100 uppercase tracking-wider">Multi-Agency Takedown Protocol</h2>
-              <div className="text-xs text-slate-400 font-mono mt-0.5">TARGET: {caseId} • ENCRYPTED DISPATCH</div>
+              <h2 className="text-lg font-bold text-slate-100 uppercase tracking-wider">Simulated Multi-Agency Escalation Package</h2>
+              <div className="text-xs text-slate-400 font-mono mt-0.5">Prepared for cybercrime, bank, telecom, and threat-intelligence review.</div>
             </div>
           </div>
           <button 
@@ -83,16 +83,16 @@ export default function TakedownModal({ isOpen, onClose, caseId }: TakedownModal
           {sequenceState === 'idle' ? (
             <div className="flex flex-col items-center justify-center text-center py-8">
               <AlertTriangle className="w-16 h-16 text-orange-500 mb-4 opacity-80" />
-              <h3 className="text-xl font-bold text-slate-200 mb-2">Confirm Takedown Initiation</h3>
+              <h3 className="text-xl font-bold text-slate-200 mb-2">Confirm Escalation Simulation</h3>
               <p className="text-sm text-slate-400 max-w-md mx-auto mb-8">
-                This action will dispatch automated legal and technical countermeasures to telecom operators, financial institutions, and cyber police units simultaneously.
+                This action simulates the preparation of evidence packages for telecom operators, financial institutions, and cyber police units.
               </p>
               
               <button 
                 onClick={initiateTakedown}
                 className="bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-8 rounded-lg flex items-center gap-2 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)] uppercase tracking-widest text-sm"
               >
-                <Send className="w-4 h-4" /> Execute Protocol
+                <Send className="w-4 h-4" /> Simulate Escalation
               </button>
             </div>
           ) : (
@@ -101,7 +101,7 @@ export default function TakedownModal({ isOpen, onClose, caseId }: TakedownModal
               {/* Progress Bar */}
               <div>
                 <div className="flex justify-between text-xs font-mono text-slate-400 mb-2 uppercase">
-                  <span>Dispatch Progress</span>
+                  <span>Simulation Progress</span>
                   <span>{Math.round(progress)}%</span>
                 </div>
                 <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
@@ -121,14 +121,14 @@ export default function TakedownModal({ isOpen, onClose, caseId }: TakedownModal
                   <div className="flex-1">
                     <div className="flex justify-between items-center mb-1">
                       <h4 className="font-bold text-slate-200">TRAI / Telecom Operators</h4>
-                      <span className={`text-xs font-mono uppercase ${traiStatus === 'completed' ? 'text-emerald-400' : traiStatus === 'running' ? 'text-red-400' : 'text-slate-500'}`}>
-                        {traiStatus === 'completed' ? 'Executed' : traiStatus === 'running' ? 'Connecting...' : 'Pending'}
+                      <span className={`text-xs font-mono uppercase ${traiStatus === 'completed' ? 'text-emerald-400' : traiStatus === 'running' ? 'text-amber-400' : 'text-slate-500'}`}>
+                        {traiStatus === 'completed' ? 'Prepared' : traiStatus === 'running' ? 'Simulating...' : 'Pending'}
                       </span>
                     </div>
                     <ul className="text-xs text-slate-400 space-y-1 font-mono">
-                      <li>› Blacklisting Target Caller ID: <span className="text-slate-300">+91-9876543210</span></li>
-                      <li>› Deactivating linked IMEI blocks</li>
-                      <li>› Tracing VoIP gateway node</li>
+                      <li>› Telecom Caller-ID Review Package Prepared</li>
+                      <li>› Suggested action: Block +91-9876543210</li>
+                      <li>› Suggested action: Trace VoIP gateway</li>
                     </ul>
                   </div>
                 </div>
@@ -141,14 +141,14 @@ export default function TakedownModal({ isOpen, onClose, caseId }: TakedownModal
                   <div className="flex-1">
                     <div className="flex justify-between items-center mb-1">
                       <h4 className="font-bold text-slate-200">RBI / NPCI Financial Hub</h4>
-                      <span className={`text-xs font-mono uppercase ${rbiStatus === 'completed' ? 'text-emerald-400' : rbiStatus === 'running' ? 'text-red-400' : 'text-slate-500'}`}>
-                        {rbiStatus === 'completed' ? 'Executed' : rbiStatus === 'running' ? 'Connecting...' : 'Pending'}
+                      <span className={`text-xs font-mono uppercase ${rbiStatus === 'completed' ? 'text-emerald-400' : rbiStatus === 'running' ? 'text-amber-400' : 'text-slate-500'}`}>
+                        {rbiStatus === 'completed' ? 'Prepared' : rbiStatus === 'running' ? 'Simulating...' : 'Pending'}
                       </span>
                     </div>
                     <ul className="text-xs text-slate-400 space-y-1 font-mono">
-                      <li>› Freezing UPI VPA: <span className="text-slate-300">rbi.verify@okaxis</span></li>
-                      <li>› Suspending linked mule accounts</li>
-                      <li>› Flagging PAN associated with KYC</li>
+                      <li>› Bank/NPCI Review Package Prepared</li>
+                      <li>› Suggested action: Hold transaction for rbi.verify@okaxis</li>
+                      <li>› Suggested action: Review linked mule accounts</li>
                     </ul>
                   </div>
                 </div>
@@ -161,14 +161,14 @@ export default function TakedownModal({ isOpen, onClose, caseId }: TakedownModal
                   <div className="flex-1">
                     <div className="flex justify-between items-center mb-1">
                       <h4 className="font-bold text-slate-200">CERT-In / Cyber Police</h4>
-                      <span className={`text-xs font-mono uppercase ${certStatus === 'completed' ? 'text-emerald-400' : certStatus === 'running' ? 'text-red-400' : 'text-slate-500'}`}>
-                        {certStatus === 'completed' ? 'Executed' : certStatus === 'running' ? 'Connecting...' : 'Pending'}
+                      <span className={`text-xs font-mono uppercase ${certStatus === 'completed' ? 'text-emerald-400' : certStatus === 'running' ? 'text-amber-400' : 'text-slate-500'}`}>
+                        {certStatus === 'completed' ? 'Prepared' : certStatus === 'running' ? 'Simulating...' : 'Pending'}
                       </span>
                     </div>
                     <ul className="text-xs text-slate-400 space-y-1 font-mono">
-                      <li>› Generating automated FIR (BNS 318, 319)</li>
-                      <li>› Uploading tamper-evident evidence packet</li>
-                      <li>› Dispatching real-time IOCs to threat feed</li>
+                      <li>› Cybercrime Complaint Summary Prepared</li>
+                      <li>› Threat Intelligence Snapshot Prepared</li>
+                      <li>› Investigation-ready evidence packet generated</li>
                     </ul>
                   </div>
                 </div>
@@ -176,6 +176,11 @@ export default function TakedownModal({ isOpen, onClose, caseId }: TakedownModal
               </div>
             </div>
           )}
+          
+          {/* Disclaimer at bottom */}
+          <div className="mt-6 p-3 bg-slate-900/80 border border-slate-700/50 rounded-lg text-[10px] text-slate-500 font-mono text-center">
+            <strong>Disclaimer:</strong> This is a simulated escalation workflow for hackathon demonstration. No real agency, bank, telecom, or government system has been contacted.
+          </div>
         </div>
 
         {/* Footer */}

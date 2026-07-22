@@ -103,14 +103,26 @@ export default function CitizenShieldPage() {
         onStartDemo={handleStartDemo} 
       />
 
-      <header className="flex justify-between items-center glass-panel p-4 rounded-xl border border-white/10">
-        <div>
-          <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-            <ShieldAlert className="text-emerald-500" />
-            Citizen Shield Live Interception
-          </h2>
-          <p className="text-slate-400 text-sm mt-1">Real-time digital arrest detection and victim protection</p>
+      <header className="flex flex-col gap-3 glass-panel p-6 rounded-xl border border-white/10 mb-2">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h2 className="text-3xl font-black text-white flex items-center gap-3 tracking-tight">
+              <ShieldAlert className="text-emerald-500 w-8 h-8" />
+              SurakshaNet AI
+            </h2>
+            <p className="text-slate-300 text-lg mt-2 font-medium">Digital Scam War Room for Real-Time Digital Arrest Scam Intervention</p>
+            <p className="text-slate-400 text-sm mt-2 max-w-3xl leading-relaxed">Detect coercive scam patterns during live calls, warn victims before payment, link suspicious entities through fraud graph intelligence, and generate complaint-ready case packets.</p>
+          </div>
+          <div className="flex flex-col gap-2 min-w-[240px]">
+            <button 
+              onClick={handleStartDemo}
+              className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all flex items-center justify-center gap-2"
+            >
+              <Activity className="w-5 h-5" /> Start 3-Minute Judge Demo
+            </button>
+          </div>
         </div>
+      </header>
         <DemoSelector 
           selectedScenario={selectedScenario}
           setSelectedScenario={setSelectedScenario}
@@ -119,7 +131,6 @@ export default function CitizenShieldPage() {
           currentWordIndex={currentWordIndex}
           onReset={() => { setCurrentWordIndex(0); setCurrentRiskScore(0); setIsPlaying(false); }}
         />
-      </header>
 
       <div className="grid grid-cols-12 gap-6 flex-1 min-h-0">
         {/* Left Column: Transcript */}

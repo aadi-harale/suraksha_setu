@@ -1,20 +1,38 @@
 # SurakshaNet AI — Digital Scam War Room
 
-## One-Line Pitch
-Real-time digital arrest scam intervention, fraud-network intelligence, and complaint-ready reporting.
+**Real-Time Digital Arrest Scam Intervention & Fraud Network Intelligence**
 
-## Problem
-Fraudsters impersonate police, CBI, ED, customs, or banks to create fear. They isolate victims, keep them on continuous audio/video calls, and pressure them into transferring "security deposits" or "bail amounts" to mule accounts. This is known as a "Digital Arrest" scam.
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![OpenRouter](https://img.shields.io/badge/OpenRouter-Fallback-blue?style=for-the-badge)
+![Hackathon Prototype](https://img.shields.io/badge/Hackathon-Prototype-orange?style=for-the-badge)
 
-## Solution
-SurakshaNet AI detects coercive scam patterns during a simulated live call, maps the scam kill-chain, warns the victim before payment, links suspicious entities through fraud graph intelligence, and generates complaint-ready, tamper-evident case packets.
+- **Live Demo:** [https://suraksha-setu-indol.vercel.app/](https://suraksha-setu-indol.vercel.app/)
+- **GitHub Repository:** [https://github.com/aadi-harale/suraksha_setu](https://github.com/aadi-harale/suraksha_setu)
+- **Demo Video:** [Add demo video link here]
+- **Pitch Deck:** [Add pitch deck link here]
 
-## Key Features
+**One-line pitch:**
+SurakshaNet AI is a real-time digital arrest scam intervention and fraud intelligence platform that detects coercive scam patterns during calls, warns victims before payment, links suspicious entities through fraud graph intelligence, and generates complaint-ready, tamper-evident case packets for cybercrime triage.
+
+---
+
+## 1. Problem
+Fraudsters impersonate police, CBI, ED, customs, banks, or cybercrime officials. They create fear, isolate victims, force them to stay on calls or video calls, and pressure them into transferring money for “verification” or “security deposit.” 
+
+The key challenge is not only detecting scams after complaints, but intervening before payment.
+
+## 2. Solution
+SurakshaNet AI simulates real-time scam-call monitoring, detects coercive patterns, maps the scam kill-chain, warns the victim, blocks a simulated payment, checks suspicious entities against a mock complaint repository, links fraud networks, and creates complaint-ready reports.
+
+## 3. Key Features
 - Citizen Shield live interception demo
 - Digital arrest kill-chain mapping
 - 5-tier risk meter
-- Reality Check: "Digital arrest does not exist"
-- Payment block simulation
+- Reality Check panel: “Digital arrest does not exist”
+- Simulated UPI payment block
 - Trusted contact alert simulation
 - Mock suspect repository check
 - Fraud network graph
@@ -24,38 +42,59 @@ SurakshaNet AI detects coercive scam patterns during a simulated live call, maps
 - False-positive defense layer
 - Complaint-ready NCRP/1930 export
 - Tamper-evident investigation packet
-- Optional OpenRouter AI triage with deterministic fallback
+- Optional OpenRouter AI triage with fallback
 
-## Tech Stack
+## 4. Demo Flow
+1. Start 3-Minute Judge Demo
+2. Scam transcript appears line by line
+3. Risk score rises
+4. Kill-chain progresses
+5. Reality Check appears
+6. Suspicious UPI is flagged
+7. Simulated payment attempt appears
+8. Payment block triggers
+9. Trusted contact alert simulation appears
+10. Investigator dashboard shows fraud cluster
+11. Evidence page generates complaint-ready packet
+
+## 5. Architecture
+Input Transcript / Audio Simulation 
+→ Hybrid Risk Engine 
+→ Phrase + Coercion Detection 
+→ Kill-Chain Mapper 
+→ Entity Extraction 
+→ Mock Suspect Repository Check 
+→ Citizen Intervention 
+→ Fraud Graph + Geospatial Dashboard 
+→ Complaint-Ready Evidence Packet
+
+## 6. Tech Stack
+**Frontend:**
 - Next.js 16
 - React 19
 - TypeScript
 - Tailwind CSS
 - lucide-react
-- @xyflow/react
-- deck.gl / maplibre-gl / react-map-gl
-- @react-pdf/renderer
+- React Flow / @xyflow/react
+- Deck.gl / MapLibre / react-map-gl
+- Recharts
+- React PDF
+
+**Backend:**
+- Python
 - FastAPI
 - SQLModel / SQLite
 - NetworkX
-- Optional OpenRouter API
+- Regex-based entity extraction
+- Hybrid scoring engine
 
-## Architecture
-Input transcript/audio simulation → hybrid risk engine → kill-chain mapper → entity extraction → suspect repository mock lookup → citizen intervention → fraud graph/dashboard → complaint-ready packet.
+**AI:**
+- OpenRouter API for optional case triage
+- Deterministic fallback if API key is missing
+- LLM is used only for summarization and complaint drafting
+- Final risk score is produced by the hybrid signal engine, not the LLM
 
-## Demo Flow
-1. Start 3-Minute Judge Demo
-2. Transcript appears
-3. Risk rises
-4. Kill-chain progresses
-5. Reality Check appears
-6. Suspect UPI is flagged
-7. Payment block simulation triggers
-8. Trusted contact alert simulation appears
-9. Dashboard shows campaign intelligence
-10. Evidence page generates complaint-ready packet
-
-## Setup Instructions
+## 7. Setup Instructions
 
 **Frontend (Standalone Demo - Recommended)**
 ```bash
@@ -70,10 +109,9 @@ cd backend
 pip install -r requirements.txt
 uvicorn backend.main:app --reload
 ```
-
 *Note: The frontend demo runs standalone with mock data. The backend API is optional for advanced testing.*
 
-## Optional AI Setup
+## 8. Optional AI Setup
 To enable live AI triage summaries, create `.env.local` in the `frontend` directory:
 ```
 OPENROUTER_API_KEY=your_key_here
@@ -81,7 +119,7 @@ OPENROUTER_MODEL=openai/gpt-4o-mini
 ```
 *Note: The app works perfectly without OpenRouter using a deterministic fallback output.*
 
-## Prototype Scope
+## 9. Prototype Scope
 **Working in prototype:**
 - Transcript simulation
 - Risk scoring
@@ -101,5 +139,5 @@ OPENROUTER_MODEL=openai/gpt-4o-mini
 - Government repository lookup
 - Multi-agency escalation
 
-## Disclaimer
-This is a hackathon prototype. It is not connected to real police, banks, telecom providers, or government systems. All generated documents are drafts and require review by authorized personnel. Audio anomaly scores are supporting signals only and do not constitute absolute proof of synthetic voice.
+## 10. Disclaimer
+This is a hackathon prototype designed to showcase a theoretical proactive defense system. It is not connected to real police, banks, telecom providers, or government systems. All generated documents are drafts and require review by authorized personnel. Audio anomaly scores are supporting signals only and do not constitute absolute proof of synthetic voice.
