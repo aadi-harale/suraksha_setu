@@ -139,4 +139,4 @@ OPENROUTER_MODEL=openai/gpt-4o-mini
 - Multi-agency escalation
 
 ## 10. Disclaimer
-This is a hackathon prototype designed to showcase a theoretical proactive defense system. It is not connected to real police, banks, telecom providers, or government systems. All generated documents are drafts and require review by authorized personnel. Audio anomaly scores are supporting signals only and do not constitute absolute proof of synthetic voice.
+This is a hackathon prototype designed to showcase a theoretical proactive defense system. It is not connected to real police, banks, telecom providers, or government systems. All generated documents are drafts and require review by authorized personnel.
