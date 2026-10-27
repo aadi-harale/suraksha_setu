@@ -4,6 +4,7 @@ export type LocalReport = {
  id:string; createdAt:string; title:string; transcript:string; score:number;
  stage:string; indicators:string[]; guidance:string; channel:string;
  moneyTransferred:'yes'|'no'|'unsure'; amount:string; status:'draft';
+ workflow?:{reviewedAt?:string;exportedAt?:string;reportedByUserAt?:string};
 };
 const KEY='suraksha-setu:local-reports:v1';
 export function readReports():LocalReport[]{
@@ -25,12 +26,24 @@ export function deleteReport(id:string):void{
  if(typeof window==='undefined')return;
  window.localStorage.setItem(KEY,JSON.stringify(readReports().filter(x=>x.id!==id)));
 }
+export type CaseMilestone='reviewedAt'|'exportedAt'|'reportedByUserAt';
+export function markReportStep(id:string,step:CaseMilestone):LocalReport{
+ if(typeof window==='undefined')throw new Error('Local browser storage unavailable');
+ const all=readReports(),target=all.find(r=>r.id===id);
+ if(!target)throw new Error('Case draft not found in this browser');
+ const updated:LocalReport={...target,workflow:{...target.workflow,[step]:target.workflow?.[step]||new Date().toISOString()}};
+ const next=all.map(r=>r.id===id?updated:r);
+ try{window.localStorage.setItem(KEY,JSON.stringify(next));}
+ catch{throw new Error('Could not update the browser draft. Check available storage.');}
+ return updated;
+}
 export function clearReports():void{if(typeof window!=='undefined')window.localStorage.removeItem(KEY);}
 export function reportText(r:LocalReport):string{
  return [
  'SURAKSHA SETU - PERSONAL INCIDENT DRAFT',
  'Not a police complaint, FIR or official acknowledgment.',
  'Reference: '+r.id,'Prepared: '+r.createdAt,'Title: '+r.title,
+ 'Status: Personal draft. Reported externally: '+(r.workflow?.reportedByUserAt?'User indicated yes (not verified)':'Not marked'),
  'Channel: '+r.channel,'Money sent: '+r.moneyTransferred,'Amount reported: '+(r.amount||'Not supplied'),
  'Rule-based indicator score (not probability): '+r.score+'/100',
  'Detected stage: '+r.stage,
