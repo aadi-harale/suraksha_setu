@@ -1,34 +1,53 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, ArrowLeft, CheckCircle2, AlertTriangle, ShieldCheck, Save, RotateCcw, LockKeyhole, PhoneCall } from 'lucide-react';
 import { TraceEngine, type Assessment } from '@/lib/trace-engine';
 import { addReport, type LocalReport } from '@/lib/local-reports';
+import { DEMO_CASES, findDemoCase } from '@/lib/demo-cases';
+import JourneySteps from '@/components/shared/JourneySteps';
 const stageNames:Record<string,string>={payment_request:'Payment request',continuous_control:'Pressure to remain on call',isolation:'Isolation from others',threat:'Threat or intimidation',authority_claim:'Claimed authority',unassessed:'No configured pattern identified'};
 const kindLabels:Record<string,string>={authority:'Claim of authority',threat:'Legal or financial threat',isolation:'Attempt to isolate you',control:'Pressure to stay connected',payment:'Request involving payment'};
 type Channel='phone call'|'WhatsApp / SMS'|'email'|'other';
 export default function CheckPage(){
+ const router=useRouter();
+ const [demoId,setDemoId]=useState('');
  const [text,setText]=useState(''),[channel,setChannel]=useState<Channel>('phone call');
  const [paid,setPaid]=useState<'yes'|'no'|'unsure'>('no'),[amount,setAmount]=useState('');
  const [result,setResult]=useState<Assessment|null>(null),[consent,setConsent]=useState(false);
  const [saved,setSaved]=useState(false),[error,setError]=useState('');
- function analyse(){
+ function analyse(input?:string){
   setError('');
-  if(text.trim().length<20)return setError('Enter at least 20 characters so there is enough context to examine.');
-  try{const engine=new TraceEngine();engine.addEvidence({id:'text-input',caseId:'personal-check',text:text.trim(),sourceLabel:'User entered text',recordedAt:new Date().toISOString()});
+  const source=(input??text).trim();
+  if(source.length<20)return setError('Enter at least 20 characters so there is enough context to examine.');
+  try{const engine=new TraceEngine();engine.addEvidence({id:'text-input',caseId:'personal-check',text:source,sourceLabel:'User entered text',recordedAt:new Date().toISOString()});
    setResult(engine.assess('personal-check'));setSaved(false);setConsent(false);
   }catch(e){setError(e instanceof Error?e.message:'Could not analyse this text.');}
  }
  function reset(){setResult(null);setSaved(false);setConsent(false);setError('');}
+ function loadExample(id:string){
+  const demo=findDemoCase(id);if(!demo)return;
+  setDemoId(demo.id);setText(demo.transcript);
+  setChannel(demo.channel);setPaid(demo.moneyTransferred);setAmount(demo.amount);
+  analyse(demo.transcript);
+ }
+ useEffect(()=>{
+  const id=new URLSearchParams(window.location.search).get('example');
+  if(id&&findDemoCase(id))loadExample(id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ },[]);
+
  function save(){
   if(!result||!consent){setError('Please confirm the local-storage notice before saving.');return;}
+  if(demoId){setError('This is a fictional example. Edit it to create a personal report.');return;}
   try {
    const entry:LocalReport={id:crypto.randomUUID(),createdAt:new Date().toISOString(),
     title:'Suspicious '+channel+' · '+new Date().toLocaleDateString('en-IN'),transcript:text.trim(),
     score:result.score,stage:stageNames[result.stage]||result.stage,
     indicators:[...new Set(result.signals.map(s=>kindLabels[s.kind]||s.kind))],
     guidance:result.recommendation,channel,moneyTransferred:paid,amount:paid==='yes'?amount.trim().slice(0,80):'',status:'draft'};
-   addReport(entry);setSaved(true);setError('');
+   addReport(entry);setSaved(true);setError('');router.push('/reports?case='+encodeURIComponent(entry.id));
   }catch(e){setError(e instanceof Error?e.message:'Could not save draft.');}
  }
  const level=result?(result.score>=65?'strong':result.score>=25?'some':'limited'):null;
