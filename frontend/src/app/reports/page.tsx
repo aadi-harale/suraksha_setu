@@ -29,3 +29,4 @@ export default function ReportsPage(){
    </div>:<div className="flex min-h-72 flex-col items-center justify-center text-center"><ShieldCheck size={30} className="text-teal-300"/><h2 className="mt-4 font-semibold">Select a draft</h2><p className="mt-2 max-w-sm text-sm leading-6 text-slate-400">Choose a draft on the left to inspect the summary, download it or delete it.</p></div>}</section>
   </div>}
  </div>;
+}
