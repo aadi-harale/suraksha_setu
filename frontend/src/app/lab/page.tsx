@@ -1,0 +1,16 @@
+import Link from 'next/link';
+import { ArrowRight, FlaskConical, Radio, Network, ChartColumn, FileSearch, LockKeyhole, CircleHelp, ShieldCheck } from 'lucide-react';
+const modules=[
+ {href:'/shield',icon:Radio,title:'Scam call simulation',desc:'Replay a fictional transcript and see the rule-based risk meter and call-stage display.'},
+ {href:'/trace',icon:Network,title:'TRACE evidence research',desc:'Add and correct synthetic evidence, inspect tentative case links and review revision-aware packets.'},
+ {href:'/dashboard',icon:ChartColumn,title:'Investigator visualisations',desc:'Explore a seeded example map, network graph and synthetic campaign intelligence.'},
+ {href:'/evidence',icon:FileSearch,title:'Evidence and benchmark lab',desc:'View fictional benchmark cases, packet examples and the limitations of the current prototype.'},
+];
+export default function LabPage(){return <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-16">
+ <p className="product-kicker flex items-center gap-2"><FlaskConical size={18}/>Advanced area</p>
+ <h1 className="mt-3 text-3xl font-extrabold md:text-4xl">Explore the prototype</h1><p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">These are technical demonstration tools, intended for researchers, hackathon judges and investigators evaluating the concept. They are separate from the simpler citizen experience.</p>
+ <div className="mt-8 rounded-xl border border-amber-400/30 bg-amber-500/10 p-5"><h2 className="flex items-center gap-2 font-semibold text-amber-100"><CircleHelp size={19}/>Important demonstration limits</h2><p className="mt-2 text-sm leading-6 text-slate-300">The case records, maps, scam scores and financial interventions shown here are simulated or synthetic. This app has no live phone interception, no production deepfake verification, no real bank protection integration and no connection to official police databases.</p></div>
+ <div className="mt-8 grid gap-5 md:grid-cols-2">{modules.map(m=><Link key={m.href} href={m.href} className="product-panel group flex flex-col p-6 transition-colors hover:border-teal-400/60"><m.icon size={28} className="text-teal-300"/><h2 className="mt-5 text-xl font-bold">{m.title}</h2><p className="mt-3 flex-1 text-sm leading-6 text-slate-300">{m.desc}</p><span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-200">Open technical view<ArrowRight size={16} className="group-hover:translate-x-1"/></span></Link>)}</div>
+ <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-teal-400/20 bg-teal-400/5 p-5"><div><p className="flex items-center gap-2 font-bold"><ShieldCheck size={19} className="text-teal-300"/>Need real-world guidance?</p><p className="mt-2 text-sm text-slate-300">Return to the citizen experience for understandable, actionable help.</p></div><Link href="/help" className="product-btn product-btn-primary">Get safety guidance<ArrowRight size={17}/></Link></div>
+ <p className="mt-8 flex items-center gap-2 text-xs text-slate-400"><LockKeyhole size={15}/>Do not upload real confidential incidents to a demo environment.</p>
+ </div>}
