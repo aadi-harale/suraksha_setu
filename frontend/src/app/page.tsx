@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { DEMO_CASES } from '@/lib/demo-cases';
 import { ShieldCheck, ArrowRight, PhoneCall, SearchCheck, FolderOpen, ShieldAlert, LockKeyhole, ListChecks, FlaskConical } from 'lucide-react';
 const actions=[
  {href:'/help',icon:PhoneCall,kicker:'NEED HELP NOW',title:'I may be in danger',copy:'Get immediate steps for a suspicious call or a payment you have already made.',tone:'border-rose-400/35 bg-rose-500/10',iconColor:'text-rose-300',cta:'See urgent steps'},
  {href:'/check',icon:SearchCheck,kicker:'NOT SURE?',title:'Check a call or message',copy:'Paste a suspicious message or transcript. We highlight warning signs and explain what they may mean.',tone:'border-teal-400/30 bg-teal-400/10',iconColor:'text-teal-300',cta:'Start a check'},
- {href:'/reports',icon:FolderOpen,kicker:'GET ORGANISED',title:'Prepare my report',copy:'Review saved drafts and take a copy of the information you may need for official reporting.',tone:'border-sky-400/25 bg-sky-400/10',iconColor:'text-sky-300',cta:'Open my reports'}
+ {href:'/reports',icon:FolderOpen,kicker:'GET ORGANISED',title:'Case workspace',copy:'Explore fictional cases, or track a personal report draft from check through preparation.',tone:'border-sky-400/25 bg-sky-400/10',iconColor:'text-sky-300',cta:'Open my reports'}
 ];
 export default function HomePage(){return <div className="overflow-hidden">
  <section className="border-b border-slate-800 bg-[radial-gradient(ellipse_at_76%_0%,rgba(15,118,110,.21),transparent_55%)]">
@@ -27,6 +28,12 @@ export default function HomePage(){return <div className="overflow-hidden">
   <p className="product-kicker">Simple, from start to finish</p><h2 className="mt-2 text-2xl font-bold">Three steps. One clear outcome.</h2>
   <div className="mt-8 grid gap-6 md:grid-cols-3">{[{n:'01',title:'Understand',copy:'Read an explanation of suspicious requests and pressure tactics.'},{n:'02',title:'Decide',copy:'Choose practical safety actions without a misleading “safe” guarantee.'},{n:'03',title:'Prepare',copy:'Optionally save a local draft and export details for an official complaint.'}].map(s=><div key={s.n} className="border-t border-slate-600 pt-5"><span className="text-3xl font-black text-teal-400/80">{s.n}</span><h3 className="mt-3 text-lg font-bold">{s.title}</h3><p className="mt-2 text-sm leading-6 text-slate-300">{s.copy}</p></div>)}</div>
  </div></section>
+ <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
+  <div className="mb-6 flex flex-wrap items-end justify-between gap-3"><div><p className="product-kicker">Start with an example</p><h2 className="mt-2 text-2xl font-bold">See how a case moves through the app</h2><p className="mt-2 text-sm text-slate-400">Fictional examples only. You can inspect and analyse them without saving personal information.</p></div><Link href="/reports" className="text-sm font-bold text-teal-200 hover:underline">Explore all 8 examples →</Link></div>
+  <div className="grid gap-4 md:grid-cols-3">{DEMO_CASES.slice(0,3).map(demo=><Link href={'/check?example='+encodeURIComponent(demo.id)} key={demo.id} className="group rounded-2xl border border-slate-700 bg-slate-900/50 p-5 transition-colors hover:border-teal-400/60">
+    <span className="text-[11px] font-bold uppercase tracking-widest text-teal-300">Fictional {demo.category}</span><h3 className="mt-3 font-bold text-white">{demo.title}</h3><p className="mt-2 min-h-16 text-sm leading-6 text-slate-400">{demo.summary}</p><span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-teal-200">Walk through example <ArrowRight size={16} className="group-hover:translate-x-1"/></span>
+   </Link>)}</div>
+ </section>
  <section className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-14 md:flex-row md:items-center md:justify-between md:px-8"><div className="max-w-2xl">
   <p className="product-kicker">Behind the scenes</p><h2 className="mt-2 text-2xl font-bold">Built on evidence, not a mystery score.</h2><p className="mt-3 text-sm leading-6 text-slate-300">The experimental TRACE engine highlights matching phrases and supports correction of case relationships. Its scores are rule-based indicators, not a validated probability of fraud.</p></div>
   <Link href="/lab" className="product-btn product-btn-secondary shrink-0"><FlaskConical size={18}/>Explore technical demo<ArrowRight size={17}/></Link>
