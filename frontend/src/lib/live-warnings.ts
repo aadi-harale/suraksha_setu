@@ -30,8 +30,15 @@ const clipped = (text:string, index:number, span:number):string =>
 export function assessLiveWarnings(text:string, sourceId:string, revision:number, provisional=false):LiveWarning[] {
   const findings=new Map<Cue,{excerpt:string}>();
   for(const [cue,regex] of PATTERNS){
-    const match=regex.exec(text);
-    if(match)findings.set(cue,{excerpt:clipped(text,match.index,match[0].length)});
+    const scanner=new RegExp(regex.source,regex.flags.includes('g')?regex.flags:regex.flags+'g');
+    let match:RegExpExecArray|null;
+    while((match=scanner.exec(text))!==null){
+      // "Do not share your OTP" is safety advice, not a request to reveal it.
+      const context=text.slice(Math.max(0,match.index-28),match.index);
+      if(['otp','remote','payment'].includes(cue)&&/(?:do not|don't|never|should not|must not)\s*$/i.test(context))continue;
+      findings.set(cue,{excerpt:clipped(text,match.index,match[0].length)});
+      break;
+    }
   }
   const out:LiveWarning[]=[];
   const has=(cue:Cue)=>findings.has(cue);
