@@ -29,20 +29,20 @@ export default function EvidencePage() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none translate-y-1/2 -translate-x-1/4"></div>
         
-        <h1 className="text-3xl font-bold text-white mb-2 relative z-10">Evidence, Benchmark & Complaint Workflow</h1>
+        <h1 className="text-3xl font-bold text-white mb-2 relative z-10">Research Evidence & Demo Packets</h1>
         <p className="text-slate-400 max-w-2xl mx-auto relative z-10">
-          Low false-positive handling, complaint-ready export, fraud campaign lead-time, and tamper-evident case packaging.
+          Synthetic validation examples, report templates and a research-only evidence export workflow. No official complaint is filed by this prototype.
         </p>
       </header>
 
       <RubricMapping />
 
-      <div className="grid grid-cols-2 gap-6 flex-1 min-h-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-0">
         {/* Left: Validation Metrics */}
         <div className="flex flex-col gap-6">
            <div className="bg-slate-900/80 rounded-xl border border-slate-800 p-6 shadow-xl">
               <h3 className="text-lg font-semibold mb-2 flex items-center gap-2 text-slate-300">
-                <ShieldCheck className="w-5 h-5" /> Curated Scenario Benchmark
+                <ShieldCheck className="w-5 h-5" /> Curated Example Set (Not Real-World Validation)
               </h3>
               <p className="text-xs text-slate-400 mb-6 italic">12 curated scenarios (9 scam, 3 legitimate) used for controlled demo testing. This is not a production-scale real-world validation dataset.</p>
               
