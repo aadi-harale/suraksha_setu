@@ -230,7 +230,7 @@ export default function LiveListeningPage(){
     <h1 className="mt-3 text-3xl font-extrabold leading-tight md:text-4xl">Hear warning signs as speech is transcribed</h1>
     <p className="mt-3 text-sm leading-7 text-slate-300">With your permission, this page listens to speech near your device microphone and flags suspicious phrases as they appear. It cannot intercept a mobile or WhatsApp call directly, guarantee fraud prevention, or stop a payment.</p>
    </div>
-   <span className={\`inline-flex w-fit items-center gap-2 rounded-full border px-3 py-2 text-xs font-bold \${status==='listening'?'border-teal-400/50 bg-teal-400/15 text-teal-200':'border-slate-600 bg-slate-800 text-slate-300'}\`}><span className={\`h-2 w-2 rounded-full \${status==='listening'?'animate-pulse bg-teal-400':'bg-slate-500'}\`}/>{stateLabel}</span>
+   <span className={`inline-flex w-fit items-center gap-2 rounded-full border px-3 py-2 text-xs font-bold ${status==='listening'?'border-teal-400/50 bg-teal-400/15 text-teal-200':'border-slate-600 bg-slate-800 text-slate-300'}`}><span className={`h-2 w-2 rounded-full ${status==='listening'?'animate-pulse bg-teal-400':'bg-slate-500'}`}/>{stateLabel}</span>
   </header>
   <JourneySteps current="check"/>
   <div className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
@@ -267,10 +267,10 @@ export default function LiveListeningPage(){
     </section>
    </div>
    <aside className="space-y-6">
-    <section aria-live="polite" className={\`rounded-2xl border p-5 md:p-6 \${urgent?'border-rose-400/60 bg-rose-500/15':high?'border-amber-400/50 bg-amber-500/10':'border-slate-700 bg-slate-900/70'}\`}>
+    <section aria-live="polite" className={`rounded-2xl border p-5 md:p-6 ${urgent?'border-rose-400/60 bg-rose-500/15':high?'border-amber-400/50 bg-amber-500/10':'border-slate-700 bg-slate-900/70'}`}>
      <h2 className="flex items-center gap-2 text-lg font-bold">{urgent?<ShieldAlert className="text-rose-300"/>:high?<AlertTriangle className="text-amber-300"/>:<ShieldCheck className="text-teal-300"/>}Warning centre</h2>
      {warnings.length===0?<p className="mt-4 text-sm leading-7 text-slate-300">No configured high-risk cues detected in the current transcript. This does not mean the conversation is safe. If you feel pressured, end the call and independently verify the request.</p>:
-      <div className="mt-4 space-y-3">{warnings.map(w=><article key={w.id} className={\`rounded-xl border p-4 \${COLORS[w.severity]}\`}>
+      <div className="mt-4 space-y-3">{warnings.map(w=><article key={w.id} className={`rounded-xl border p-4 ${COLORS[w.severity]}`}>
        <div className="flex flex-wrap items-center justify-between gap-2"><strong className="text-sm">{w.title}</strong><span className="text-[10px] font-bold uppercase">{LABEL[w.severity]}</span></div>
        <p className="mt-2 text-sm leading-6">{w.action}</p>
        <blockquote className="mt-3 break-words rounded-lg bg-slate-950/35 p-3 text-xs leading-5">Source: {w.excerpt}</blockquote>
