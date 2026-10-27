@@ -64,7 +64,7 @@ export default function ReportsPage(){
    <div><p className="product-kicker">Your case workspace</p><h1 className="mt-3 text-3xl font-extrabold md:text-4xl">Understand cases. Keep your drafts.</h1><p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">Explore realistic fictional examples or manage the private drafts you choose to save. No information here is an official police record.</p></div>
    <Link href="/check" className="product-btn product-btn-primary shrink-0"><Plus size={18}/>Start a new check</Link>
   </header>
-  <JourneySteps current="prepare"/>
+  <JourneySteps current="prepare" completed={tab==='personal'&&reports.length>0?['check','understand']:[]}/>
   <div className="mb-6 flex items-start gap-3 rounded-xl border border-teal-400/25 bg-teal-500/5 p-4 text-sm leading-6 text-slate-200"><ShieldCheck size={20} className="mt-0.5 shrink-0 text-teal-300"/>Fictional examples are part of the application. They are not automatically saved to your browser. Personal drafts are separate and remain only in this browser using unencrypted local storage.</div>
   {message&&<p role="status" className="mb-5 rounded-xl border border-slate-600 bg-slate-900 p-4 text-sm">{message}</p>}
   <div className="mb-6 inline-flex flex-wrap gap-2 rounded-2xl border border-slate-700 bg-slate-900/70 p-2" role="tablist" aria-label="Case collections">
