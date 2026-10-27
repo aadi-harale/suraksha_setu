@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Shield, LayoutDashboard, FileText, Settings } from 'lucide-react';
+import { Shield, LayoutDashboard, FileText, Settings, GitBranch } from 'lucide-react';
 
 const NAV_ITEMS = [
   { href: '/', label: 'Citizen Shield', icon: Shield },
   { href: '/dashboard', label: 'Investigator Dashboard', icon: LayoutDashboard },
   { href: '/evidence', label: 'Evidence & Validation', icon: FileText },
+  { href: '/trace', label: 'TRACE Research Lab', icon: GitBranch },
 ];
 
 export default function Navigation() {
