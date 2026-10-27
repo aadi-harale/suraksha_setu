@@ -14,7 +14,7 @@ export default function HomePage(){return <div className="overflow-hidden">
     <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Scammers rely on confusion and pressure. Suraksha Setu helps you understand suspicious conversations, choose safer next steps and prepare information for reporting. No complicated dashboard required.</p>
     <div className="mt-8 flex flex-wrap gap-3"><Link href="/check" className="product-btn product-btn-primary"><SearchCheck size={19}/>Check a suspicious message<ArrowRight size={18}/></Link><Link href="/help" className="product-btn product-btn-secondary"><ShieldAlert size={19}/>I need urgent help</Link></div>
    </div>
-   <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-slate-400"><span className="inline-flex items-center gap-2"><LockKeyhole size={17} className="text-teal-300"/>Analysis runs in your browser</span><span className="inline-flex items-center gap-2"><ListChecks size={17} className="text-teal-300"/>Plain-language guidance</span><span className="inline-flex items-center gap-2"><ShieldCheck size={17} className="text-teal-300"/>No official action claimed</span></div>
+   <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-slate-400"><span className="inline-flex items-center gap-2"><LockKeyhole size={17} className="text-teal-300"/>Risk-rule checks run in your browser</span><span className="inline-flex items-center gap-2"><ListChecks size={17} className="text-teal-300"/>Plain-language guidance</span><span className="inline-flex items-center gap-2"><ShieldCheck size={17} className="text-teal-300"/>No official action claimed</span></div>
   </div>
  </section>
  <section className="mx-auto max-w-7xl px-5 pt-10 md:px-8">
