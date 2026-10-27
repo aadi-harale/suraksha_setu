@@ -32,3 +32,4 @@ export default function Navigation() {
    {[...routes,{href:'/lab',label:'Explore prototype',icon:FlaskConical}].map(({href,label,icon:Icon})=><Link key={href} href={href} onClick={()=>setOpen(false)} className={`flex items-center gap-3 rounded-lg p-3 text-sm ${path===href?'bg-teal-400/15 text-teal-200':'text-slate-200'}`}><Icon size={19}/>{label}</Link>)}
   </nav>}
  </header>;
+}
