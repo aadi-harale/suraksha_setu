@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { DEMO_CASES } from '@/lib/demo-cases';
-import { ShieldCheck, ArrowRight, PhoneCall, SearchCheck, FolderOpen, ShieldAlert, LockKeyhole, ListChecks, FlaskConical } from 'lucide-react';
+import { ShieldCheck, ArrowRight, PhoneCall, SearchCheck, FolderOpen, ShieldAlert, LockKeyhole, ListChecks, FlaskConical, Mic, Radio } from 'lucide-react';
 const actions=[
  {href:'/help',icon:PhoneCall,kicker:'NEED HELP NOW',title:'I may be in danger',copy:'Get immediate steps for a suspicious call or a payment you have already made.',tone:'border-rose-400/35 bg-rose-500/10',iconColor:'text-rose-300',cta:'See urgent steps'},
  {href:'/check',icon:SearchCheck,kicker:'NOT SURE?',title:'Check a call or message',copy:'Paste a suspicious message or transcript. We highlight warning signs and explain what they may mean.',tone:'border-teal-400/30 bg-teal-400/10',iconColor:'text-teal-300',cta:'Start a check'},
@@ -15,6 +15,13 @@ export default function HomePage(){return <div className="overflow-hidden">
     <div className="mt-8 flex flex-wrap gap-3"><Link href="/check" className="product-btn product-btn-primary"><SearchCheck size={19}/>Check a suspicious message<ArrowRight size={18}/></Link><Link href="/help" className="product-btn product-btn-secondary"><ShieldAlert size={19}/>I need urgent help</Link></div>
    </div>
    <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-slate-400"><span className="inline-flex items-center gap-2"><LockKeyhole size={17} className="text-teal-300"/>Analysis runs in your browser</span><span className="inline-flex items-center gap-2"><ListChecks size={17} className="text-teal-300"/>Plain-language guidance</span><span className="inline-flex items-center gap-2"><ShieldCheck size={17} className="text-teal-300"/>No official action claimed</span></div>
+  </div>
+ </section>
+ <section className="mx-auto max-w-7xl px-5 pt-10 md:px-8">
+  <div className="flex flex-col gap-5 rounded-2xl border border-teal-400/35 bg-teal-500/10 p-6 md:flex-row md:items-center md:justify-between md:p-7">
+   <div className="max-w-2xl"><p className="product-kicker flex items-center gap-2"><Radio size={17}/>Live warning assistant · beta</p><h2 className="mt-2 text-xl font-bold md:text-2xl">Want warning messages while speech is being heard?</h2>
+    <p className="mt-2 text-sm leading-6 text-slate-300">Start an opt-in microphone listening session and see evidence-linked safety alerts. Works with speech near the microphone; browsers cannot secretly tap your phone calls. Browser speech recognition may use a third-party service.</p></div>
+   <Link href="/listen" className="product-btn product-btn-primary shrink-0"><Mic size={18}/>Open live warnings<ArrowRight size={17}/></Link>
   </div>
  </section>
  <section className="mx-auto max-w-7xl px-5 py-14 md:px-8">
