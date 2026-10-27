@@ -14,14 +14,14 @@ import BusinessImpact from '@/components/dashboard/business-impact';
 
 export default function DashboardPage() {
   return (
-    <div className="h-full flex flex-col p-6 max-w-7xl mx-auto gap-6">
-      <header className="flex justify-between items-center glass-panel p-4 rounded-xl border border-slate-800">
+    <div className="min-h-full flex flex-col p-4 md:p-6 max-w-7xl mx-auto gap-6">
+      <header className="flex flex-wrap justify-between items-center gap-4 glass-panel p-4 rounded-xl border border-slate-800">
         <div>
           <h2 className="text-2xl font-bold text-white flex items-center gap-2">
             <LayoutDashboard className="text-emerald-500" />
             Investigator Dashboard
           </h2>
-          <p className="text-slate-400 text-sm mt-1">Live fraud network intelligence & geospatial analysis</p>
+          <p className="text-slate-400 text-sm mt-1">Synthetic fraud-network examples and visualisations for demonstration</p>
         </div>
         <div className="flex gap-4">
            <div className="bg-slate-800 rounded-lg px-4 py-2 flex items-center gap-3 border border-slate-700">
@@ -29,10 +29,10 @@ export default function DashboardPage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
               </span>
-              <span className="text-sm font-medium text-slate-300">Live Sync Active</span>
+              <span className="text-sm font-medium text-slate-300">Demo dataset · not live</span>
            </div>
            <div className="bg-slate-800 rounded-lg px-4 py-2 flex items-center gap-3 border border-slate-700">
-              <span className="text-sm text-slate-400">Active Cases:</span>
+              <span className="text-sm text-slate-400">Example cases:</span>
               <span className="text-sm font-bold text-white">20</span>
            </div>
         </div>
@@ -46,19 +46,19 @@ export default function DashboardPage() {
         
         {/* Row 2: Top Entities | Active Alerts | Graph Intelligence */}
         <div className="col-span-12 grid grid-cols-12 gap-6">
-          <div className="col-span-4 h-[400px]">
+          <div className="col-span-12 lg:col-span-4 h-[400px]">
             <TopEntities />
           </div>
-          <div className="col-span-4 h-[400px]">
+          <div className="col-span-12 lg:col-span-4 h-[400px]">
             <ActiveAlerts />
           </div>
-          <div className="col-span-4 h-[400px]">
+          <div className="col-span-12 lg:col-span-4 h-[400px]">
             <GraphIntelligence />
           </div>
         </div>
 
         {/* Row 2: Lead Time & Business Impact */}
-        <div className="col-span-12 grid grid-cols-2 gap-6">
+        <div className="col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
           <CampaignLeadTime />
           <BusinessImpact />
         </div>
