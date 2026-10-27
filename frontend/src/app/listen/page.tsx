@@ -56,6 +56,7 @@ export default function LiveListeningPage(){
  const baseRef=useRef('');
  const finalizedRef=useRef('');
  const latestRef=useRef('');
+ const lastWasProvisionalRef=useRef(false);
  const engineRef=useRef<TraceEngine|null>(null);
  const sentRef=useRef(new Set<string>());
  const notifiedRef=useRef(new Set<string>());
@@ -86,16 +87,15 @@ export default function LiveListeningPage(){
 
  function resetEvidence(source:'microphone'|'fictional'){
   engineRef.current=new TraceEngine();
-  latestRef.current='';baseRef.current='';finalizedRef.current='';
+  latestRef.current='';baseRef.current='';finalizedRef.current='';lastWasProvisionalRef.current=false;
   sentRef.current=new Set();notifiedRef.current=new Set();
   setTranscript('');setWarnings([]);setHistory([]);setRevision(0);
   setSourceType(source);
  }
  function considerText(full:string, provisional:boolean, source:'microphone'|'fictional'='microphone'){
   const text=cutoff(full);
-  if(!text||text===latestRef.current&&provisional)return;
-  if(text===latestRef.current)return;
-  latestRef.current=text;
+  if(!text||(text===latestRef.current&&lastWasProvisionalRef.current===provisional))return;
+  latestRef.current=text;lastWasProvisionalRef.current=provisional;
   setTranscript(text);
   if(!engineRef.current)engineRef.current=new TraceEngine();
   const engine=engineRef.current;
