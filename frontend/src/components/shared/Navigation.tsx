@@ -8,7 +8,7 @@ import { ShieldCheck, House, SearchCheck, FolderOpen, LifeBuoy, Menu, X, FlaskCo
 const routes = [
   { href:'/', label:'Home', icon:House },
   { href:'/check', label:'Check a scam', icon:SearchCheck },
-  { href:'/reports', label:'My reports', icon:FolderOpen },
+  { href:'/reports', label:'Case workspace', icon:FolderOpen },
   { href:'/help', label:'Get help', icon:LifeBuoy },
 ];
 
