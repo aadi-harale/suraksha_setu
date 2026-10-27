@@ -35,3 +35,7 @@ test('live warning IDs are stable even when evidence revisions change',()=>{
  assert.equal(a[0].provisional,true);
  assert.equal(b[0].evidenceRevision,3);
 });
+test('streaming speech catches spoken-word amounts without UPI tokens',()=>{
+ const warnings=detect('You are under digital arrest. Do not tell anyone. Transfer fifty thousand rupees for verification now.');
+ assert.ok(warnings.some(w=>w.id==='payment'&&w.severity==='critical'));
+});
