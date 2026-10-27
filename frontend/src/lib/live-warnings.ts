@@ -20,7 +20,7 @@ const PATTERNS: ReadonlyArray<[Cue, RegExp]> = [
   ['authority', /\b(?:cbi|police officer|cybercrime officer|rbi official|enforcement directorate)\b/i],
   ['isolation', /\b(?:do not|don't|never|must not)\s+(?:tell|call|contact|inform|speak to)\s+(?:your\s+)?(?:family|friends|lawyer|anyone)\b/i],
   ['threat', /\b(?:arrest warrant|you will be arrested|go to jail|freeze your account|legal action|raid your house|money laundering)\b/i],
-  ['payment', /\b(?:transfer|send|deposit|pay)\b.{0,95}(?:\d[\d,]*\s*(?:rupees?|rs\.?)|₹\s*[\d,]+|[\w.-]+@[\w-]+|money|amount|deposit|verification)|(?:\d[\d,]*\s*(?:rupees?|rs\.?)|₹\s*[\d,]+).{0,75}\b(?:transfer|send|deposit|pay)\b/i],
+  ['payment', /\b(?:transfer|send|deposit|pay)\b.{0,95}(?:\d[\d,]*\s*(?:rupees?|rs\.?)|₹\s*[\d,]+|[\w.-]+@[\w-]+|money|amount|deposit|verification|(?:hundred|thousand|lakh|crore)\s+rupees?)|(?:\d[\d,]*\s*(?:rupees?|rs\.?)|₹\s*[\d,]+).{0,75}\b(?:transfer|send|deposit|pay)\b/i],
   ['otp', /\b(?:share|tell|give|read out|send)\b.{0,45}\b(?:otp|one.time password|password|verification code)\b|\b(?:otp|one.time password)\b.{0,30}\b(?:share|tell|give|send)\b/i],
   ['remote', /\b(?:install|download|open|give access to)\b.{0,55}\b(?:anydesk|teamviewer|screen.?sharing|remote access|remote control)\b/i],
 ];
