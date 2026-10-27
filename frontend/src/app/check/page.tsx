@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowRight, ArrowLeft, CheckCircle2, AlertTriangle, ShieldCheck, Save, RotateCcw, LockKeyhole, PhoneCall } from 'lucide-react';
+import { ArrowRight, ArrowLeft, CheckCircle2, AlertTriangle, ShieldCheck, Save, RotateCcw, LockKeyhole, PhoneCall, Mic } from 'lucide-react';
 import { TraceEngine, type Assessment } from '@/lib/trace-engine';
 import { addReport, type LocalReport } from '@/lib/local-reports';
 import { DEMO_CASES, findDemoCase } from '@/lib/demo-cases';
@@ -33,7 +33,27 @@ export default function CheckPage(){
   analyse(demo.transcript);
  }
  useEffect(()=>{
-  const id=new URLSearchParams(window.location.search).get('example');
+  const params=new URLSearchParams(window.location.search);
+  if(params.get('from')==='live'){
+   // A deliberate handoff from the microphone screen; never persist this copy.
+   try{
+    const raw=sessionStorage.getItem('suraksha:setu:live-handoff:v1');
+    sessionStorage.removeItem('suraksha:setu:live-handoff:v1');
+    if(raw){
+     const candidate:unknown=JSON.parse(raw);
+     if(candidate&&typeof candidate==='object'&&'text' in candidate&&'at' in candidate){
+      const data=candidate as {text:unknown;at:unknown;fictional?:unknown};
+      if(typeof data.text==='string'&&data.text.length>=20&&data.text.length<=10000&&typeof data.at==='number'&&Date.now()-data.at<15*60*1000&&Date.now()>=data.at){
+       setDemoId(data.fictional?'demo-digital-arrest':'');
+       setText(data.text);setChannel('phone call');setPaid('unsure');setAmount('');
+       analyse(data.text);
+       return;
+      }
+     }
+    }
+   }catch{/* session storage unavailable or stale; remain on the manual input flow */}
+  }
+  const id=params.get('example');
   if(id&&findDemoCase(id))loadExample(id);
   // eslint-disable-next-line react-hooks/exhaustive-deps
  },[]);
@@ -57,6 +77,10 @@ export default function CheckPage(){
    <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">You describe what happened. We point out patterns associated with pressure tactics and suggest safer next steps. This is a rule-based screening tool, not a verdict.</p></div>
 
   <JourneySteps current={result?'understand':'check'} completed={result?['check']:[]}/>
+  <Link href="/listen" className="mb-6 flex items-center justify-between gap-3 rounded-xl border border-teal-400/35 bg-teal-500/10 p-4 text-sm text-teal-100 hover:bg-teal-500/15">
+   <span className="flex items-center gap-2"><Mic size={20}/>Want to analyse speech as it happens? Try permission-based live microphone warnings.</span>
+   <ArrowRight size={18} className="shrink-0"/>
+  </Link>
   <section className="mb-6 rounded-2xl border border-teal-400/30 bg-teal-500/5 p-5">
    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-bold text-white">Try a fictional example</h2><p className="mt-1 text-xs text-slate-300">Eight educational cases, including legitimate messages for comparison. No real individuals or official cases.</p></div><span className="rounded-full border border-teal-400/30 px-3 py-1 text-xs font-bold text-teal-200">DEMO DATA</span></div>
    <label htmlFor="example-picker" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">Choose a case to examine</label>

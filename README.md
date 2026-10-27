@@ -1,6 +1,6 @@
-# SurakshaNet AI — Digital Scam War Room
+# Suraksha Setu AI — Guided Scam Safety & TRACE
 
-**Real-Time Digital Arrest Scam Intervention & Fraud Network Intelligence**
+**Permission-based live microphone warning beta · Evidence-linked TRACE research · Citizen case preparation**
 
 ![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -14,7 +14,7 @@
 - **Demo Video:** [https://drive.google.com/file/d/1_T2kYNGLl739bIoA0bKhXFWXWVkulMsD/view?usp=drive_link](https://drive.google.com/file/d/1_T2kYNGLl739bIoA0bKhXFWXWVkulMsD/view?usp=drive_link)
 
 
-SurakshaNet AI is a real-time digital arrest scam intervention and fraud intelligence platform that detects coercive scam patterns during calls, warns victims before payment, links suspicious entities through fraud graph intelligence, and generates complaint-ready, tamper-evident case packets for cybercrime triage.
+Suraksha Setu is a cyber-fraud safety prototype with guided text checks, a **browser microphone listening beta**, fictional case walkthroughs and evidence-linked TRACE analysis. With explicit permission, supported browsers convert nearby speech to text and the application shows immediate on-screen warning messages for configured coercion/payment patterns. The application does **not** directly intercept PSTN or WhatsApp calls or block real payments. Browser speech recognition may send audio to the browser vendor's transcription service. Results are rule-based indicators, not calibrated fraud probabilities.
 
 ---
 
@@ -24,14 +24,17 @@ Fraudsters impersonate police, CBI, ED, customs, banks, or cybercrime officials.
 The key challenge is not only detecting scams after complaints, but intervening before payment.
 
 ## 2. Solution
-SurakshaNet AI simulates real-time scam-call monitoring, detects coercive patterns, maps the scam kill-chain, warns the victim, blocks a simulated payment, checks suspicious entities against a mock complaint repository, links fraud networks, and creates complaint-ready reports.
+The primary citizen journey is **Home → permission-based live listening (optional) or text check → source-linked warning explanations → opt-in personal case draft → independent official reporting**. Advanced tools include fictional call replay, TRACE evidence correction, graph correlations, and synthetic investigation dashboards.
 
 ## 3. Key Features
-- Citizen Shield live interception demo
+- Opt-in browser microphone speech-to-text and immediate on-screen scam warnings (`/listen`, beta)
+- Optional browser desktop notification messages for high/critical cues
+- Evidence-referenced warning snippets and transcript-to-case handoff
+- Fictional prerecorded Citizen Shield replay (`/shield`)
 - Digital arrest kill-chain mapping
 - 5-tier risk meter
 - Reality Check panel: “Digital arrest does not exist”
-- Simulated UPI payment block
+- Simulated payment-blocking scenario (no real transaction is affected)
 - Trusted contact alert simulation
 - Mock suspect repository check
 - Fraud network graph
@@ -39,33 +42,26 @@ SurakshaNet AI simulates real-time scam-call monitoring, detects coercive patter
 - Scam Script DNA
 - Campaign lead-time intelligence
 - False-positive defense layer
-- Complaint-ready NCRP/1930 export
-- Tamper-evident investigation packet
+- Personal text report draft and links to official NCRP/1930 reporting (no direct filing)
+- SHA-256 demonstration packet digest (not a legal signature or third-party attestation)
 - Optional OpenRouter AI triage with fallback
 
-## 4. Demo Flow
-1. Start 3-Minute Judge Demo
-2. Scam transcript appears line by line
-3. Risk score rises
-4. Kill-chain progresses
-5. Reality Check appears
-6. Suspicious UPI is flagged
-7. Simulated payment attempt appears
-8. Payment block triggers
-9. Trusted contact alert simulation appears
-10. Investigator dashboard shows fraud cluster
-11. Evidence page generates complaint-ready packet
+## 4. Citizen Workflow
+1. Select **Live warnings** or **Text check** from the homepage.
+2. Live mode: read the disclosure, consent, explicitly start speech recognition and observe warning messages as speech is transcribed. Browser support varies.
+3. Choose **Continue to case review** to transfer the transcript through a temporary, consumed session-storage handoff.
+4. Review why the rules fired and select safer actions. A lower score is **not** proof a caller is legitimate.
+5. Save a personal draft only with separate opt-in; drafts use unencrypted browser storage and can be exported or deleted.
+6. Open official guidance and independently contact 1930 or cybercrime.gov.in if required.
+
+The historical `/shield` fictional call-replay and `/trace` investigation demonstrator remain available under `/lab`.
 
 ## 5. Architecture
-Input Transcript / Audio Simulation 
-→ Hybrid Risk Engine 
-→ Phrase + Coercion Detection 
-→ Kill-Chain Mapper 
-→ Entity Extraction 
-→ Mock Suspect Repository Check 
-→ Citizen Intervention 
-→ Fraud Graph + Geospatial Dashboard 
-→ Complaint-Ready Evidence Packet
+**Live beta:** explicit consent → browser microphone recognition (potentially vendor-hosted) → interim/final transcript → deterministic pressure/credential/payment cues → on-screen warning with source excerpt and TRACE evidence revision → optional generic desktop notification → user-initiated case-review handoff → opt-in draft / external reporting.
+
+**TRACE research:** evidence source and revision → heuristic assessment → tentative fraud relationship → correction/withdrawal → dependent-link recomputation → mark prior packet superseded → maintain separate intervention request/acknowledgment/verification states.
+
+**Single proposed novelty:** evidence-bound correction propagation combined with verifiable intervention accountability. The microphone mode is a product feature rather than a standalone novelty claim.
 
 ## 6. Tech Stack
 **Frontend:**
