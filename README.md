@@ -57,15 +57,11 @@ The primary citizen journey is **Home → permission-based live listening (optio
 The historical `/shield` fictional call-replay and `/trace` investigation demonstrator remain available under `/lab`.
 
 ## 5. Architecture
-Input Transcript / Audio Simulation 
-→ Hybrid Risk Engine 
-→ Phrase + Coercion Detection 
-→ Kill-Chain Mapper 
-→ Entity Extraction 
-→ Mock Suspect Repository Check 
-→ Citizen Intervention 
-→ Fraud Graph + Geospatial Dashboard 
-→ Complaint-Ready Evidence Packet
+**Live beta:** explicit consent → browser microphone recognition (potentially vendor-hosted) → interim/final transcript → deterministic pressure/credential/payment cues → on-screen warning with source excerpt and TRACE evidence revision → optional generic desktop notification → user-initiated case-review handoff → opt-in draft / external reporting.
+
+**TRACE research:** evidence source and revision → heuristic assessment → tentative fraud relationship → correction/withdrawal → dependent-link recomputation → mark prior packet superseded → maintain separate intervention request/acknowledgment/verification states.
+
+**Single proposed novelty:** evidence-bound correction propagation combined with verifiable intervention accountability. The microphone mode is a product feature rather than a standalone novelty claim.
 
 ## 6. Tech Stack
 **Frontend:**
