@@ -96,7 +96,7 @@ export default function CitizenShieldPage() {
   };
 
   return (
-    <div className="h-full flex flex-col p-6 max-w-7xl mx-auto gap-4 relative">
+    <div className="min-h-full flex flex-col p-4 md:p-6 max-w-7xl mx-auto gap-4 relative">
       <JudgeDemoMode 
         currentStep={currentStep} 
         isActive={isDemoModeActive} 
@@ -118,7 +118,7 @@ export default function CitizenShieldPage() {
               onClick={handleStartDemo}
               className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all flex items-center justify-center gap-2"
             >
-              <Activity className="w-5 h-5" /> Start 3-Minute Judge Demo
+              <Activity className="w-5 h-5" /> Start fictional call replay
             </button>
           </div>
         </div>
@@ -134,12 +134,12 @@ export default function CitizenShieldPage() {
 
       <div className="grid grid-cols-12 gap-6 flex-1 min-h-0">
         {/* Left Column: Transcript */}
-        <div className="col-span-5 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-5 flex flex-col gap-4">
           <TranscriptPanel displayedText={displayedText} isPlaying={isPlaying} />
         </div>
 
         {/* Center Column: Risk Meter & Stages */}
-        <div className="col-span-4 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-4 flex flex-col gap-4">
           <RiskMeter currentRiskScore={currentRiskScore} scenario={selectedScenario} />
           <RiskTimeline riskProgression={selectedScenario.riskProgression.slice(0, currentWordIndex > 0 ? Math.ceil((currentWordIndex / words.length) * selectedScenario.riskProgression.length) : 0)} />
           <KillChainStage scenario={selectedScenario} progress={currentWordIndex > 0 ? currentWordIndex / words.length : 0} />
@@ -151,7 +151,7 @@ export default function CitizenShieldPage() {
         </div>
 
         {/* Right Column: Actions & Voice */}
-        <div className="col-span-3 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-3 flex flex-col gap-4">
            <WarningOverlay currentRiskScore={currentRiskScore} />
            
            <ImpactBadge currentRiskScore={currentRiskScore} />
