@@ -56,7 +56,7 @@ export default function CheckPage(){
   <div className="mb-9"><p className="product-kicker">Step 1 of 4 · Check the interaction</p><h1 className="mt-3 text-3xl font-extrabold md:text-4xl">Check a suspicious interaction</h1>
    <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">You describe what happened. We point out patterns associated with pressure tactics and suggest safer next steps. This is a rule-based screening tool, not a verdict.</p></div>
 
-  <JourneySteps current={result?'understand':'check'}/>
+  <JourneySteps current={result?'understand':'check'} completed={result?['check']:[]}/>
   <section className="mb-6 rounded-2xl border border-teal-400/30 bg-teal-500/5 p-5">
    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-bold text-white">Try a fictional example</h2><p className="mt-1 text-xs text-slate-300">Eight educational cases, including legitimate messages for comparison. No real individuals or official cases.</p></div><span className="rounded-full border border-teal-400/30 px-3 py-1 text-xs font-bold text-teal-200">DEMO DATA</span></div>
    <label htmlFor="example-picker" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">Choose a case to examine</label>
