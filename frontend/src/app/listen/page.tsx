@@ -91,7 +91,7 @@ export default function LiveListeningPage(){
   setTranscript('');setWarnings([]);setHistory([]);setRevision(0);
   setSourceType(source);
  }
- function considerText(full:string, provisional:boolean){
+ function considerText(full:string, provisional:boolean, source:'microphone'|'fictional'='microphone'){
   const text=cutoff(full);
   if(!text||text===latestRef.current&&provisional)return;
   if(text===latestRef.current)return;
@@ -101,7 +101,7 @@ export default function LiveListeningPage(){
   const engine=engineRef.current;
   try{
    const existing=engine.evidenceList().find(x=>x.id==='live-segment');
-   if(!existing)engine.addEvidence({id:'live-segment',caseId:'live-review',text,sourceLabel:sourceType==='fictional'?'Fictional demonstration':'User-consented browser microphone transcription',recordedAt:new Date().toISOString()});
+   if(!existing)engine.addEvidence({id:'live-segment',caseId:'live-review',text,sourceLabel:source==='fictional'?'Fictional demonstration':'User-consented browser microphone transcription',recordedAt:new Date().toISOString()});
    else engine.reviseEvidence('live-segment',text,existing.revision);
    const current=engine.assess('live-review');
    setRevision(current.revision);
@@ -114,7 +114,7 @@ export default function LiveListeningPage(){
      sentRef.current.add(key);
      events.push({key,warning,createdAt:new Date().toISOString()});
     }
-    if(!provisional&&sourceType==='microphone'&&notificationsRef.current&&['critical','high'].includes(warning.severity)&&!notifiedRef.current.has(key)){
+    if(!provisional&&source==='microphone'&&notificationsRef.current&&['critical','high'].includes(warning.severity)&&!notifiedRef.current.has(key)){
      notifiedRef.current.add(key);
      if('Notification' in window&&Notification.permission==='granted'){
       try{new Notification('Suraksha Setu: possible scam warning',{body:'Suspicious pressure or sensitive request detected. Check the on-screen guidance.',tag:'suraksha-'+warning.id});}catch{/* browser may block notification */ }
@@ -159,7 +159,7 @@ export default function LiveListeningPage(){
     if(spoken){if(item.isFinal)finalized.push(spoken);else partial.push(spoken);}
    }
    finalizedRef.current=join(finalized);
-   considerText(join([baseRef.current,finalizedRef.current,join(partial)]),partial.length>0);
+   considerText(join([baseRef.current,finalizedRef.current,join(partial)]),partial.length>0,'microphone');
   };
   recognition.onerror=event=>{
    if(!wantedRef.current)return;
@@ -201,7 +201,7 @@ export default function LiveListeningPage(){
  function loadFictionalDemo(){
   stopListening();resetEvidence('fictional');setNotices('Fictional demonstration only. No microphone was activated.');
   const example=DEMO_CASES.find(c=>c.id==='demo-digital-arrest');
-  if(example){setStatus('stopped');setTimeout(()=>considerText(example.transcript,false),0);}
+  if(example){setStatus('stopped');setTimeout(()=>considerText(example.transcript,false,'fictional'),0);}
  }
  function clearSession(){
   stopListening();resetEvidence('microphone');setNotices('Current session text cleared from this page.');setError('');
