@@ -1,0 +1,26 @@
+name: Verify Suraksha Setu live warning rules
+on:
+  push:
+    branches:
+      - main
+      - feature/live-microphone-warning-flow
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Install application dependencies
+        run: cd frontend && npm ci
+      - name: Execute live warning regression cases
+        run: cd frontend && npm exec --yes --package=tsx@4.20.6 -- tsx --test src/lib/live-warnings.test.ts
+      - name: Build Next.js application
+        run: cd frontend && npm run build
